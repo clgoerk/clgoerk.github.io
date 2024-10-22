@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin-bottom: 8px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
+}
+
+h2 {
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-color: black;
+}
+
+#grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(45px, auto);
+  grid-template-areas: 
+    'hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr'
+    'hom hom hom hom hom hom hom hom hom hom hom hom'
+    'abt abt abt abt abt abt abt abt abt abt abt abt'
+    'sea sea sea sea sea sea sea sea sea sea sea sea'
+    'prt prt prt prt prt prt prt prt prt prt prt prt'
+    'cod cod cod cod cod cod cod cod cod cod cod cod'
+    'con con con con con con con con con con con con'
+    'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
+}
+
+#navbar {
+  display: grid;
+  grid-area: hdr;
+  width: 100vw;
+  position: fixed;
+  z-index: 12;
+  background-color: black;
+  padding: 10px 20px;
+  grid-template-columns: 1fr; 
+  align-items: center;
+}
+
+#mobileMenu {
+  display: none; 
+  cursor: pointer;
+}
+
+#mobileMenu .bar {
+  background-color: white;
+  display: block;
+  height: 3px;
+  width: 25px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+#navList {
+  list-style: none; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto)); 
+  gap: 10px; 
+  justify-content: start;
+}
+
+#navList a {
+  text-decoration: none;
+  color: white; 
+  font-size: 18px;
+  transition: color 0.3s; 
+}
+
+#navList a:hover {
+  color: #66b3ff; 
+}
+
+#home {
+  display: grid;
+  grid-area: hom;
+  grid-template-columns: 1fr;
+  background: url('../assets/images/greyBkg.png');
+  padding: 80px 50px; 
+  text-align: center;
+}
+
+#about {
+  display: grid;
+  grid-area: abt;
+  grid-template-columns: 1fr 2fr;
+  background-color: #444;
+  padding: 50px; 
+}
+  #photo {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  #triLogo {
+    width: 25%;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+
+#seasonal {
+  display: grid;
+  grid-area: sea;
+  grid-template-columns: 1fr;
+  background: url('../assets/images/halloween.jpg');
+  background-size: cover;  
+  align-items: center;
+  padding: 75px; 
+}
+  #happy_halloween {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+#portfolio {
+  display: grid;
+  grid-area: prt;
+  grid-template-columns: 1fr;
+  background-color: #555;
+  padding: 50px 40px; 
+  text-align: center;
+}
+
+  #galleryContainer {
+    position: relative; 
+    overflow: hidden; 
+  }
+
+  #gallery {
+    display: grid; 
+    grid-auto-flow: column; 
+    gap: 20px;   
+    width: 100%; 
+    overflow: hidden; 
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .galleryItem {
+    min-width: 300px; 
+    height: 500px;
+    background-color: #333;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  .galleryItem:hover {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+
+  #luke {
+    width: 75%
+  }
+
+  #scrollButtons {
+    display: grid;
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    grid-template-columns: repeat(2, auto); 
+    gap: 15px; 
+    z-index: 10; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 5px;
+}
+
+.arrowButton {
+    background-color: #007BFF; 
+    color: white;
+    border: 2px solid #444; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+  .arrowButton:hover {
+    background-color: #0056b3; 
+    border-color: #333; 
+    transform: scale(1.1);
+  }
+
+#contact {
+  display: grid;
+  grid-area: con;
+  grid-template-columns: 1fr;
+  background-color: #222;
+  padding: 50px; 
+  text-align: center;
+}
+
+  #contactInfo {
+    font-size: 18px;
+  }
+
+  #contactInfo a {
+    color: #66b3ff; 
+    text-decoration: none;
+  }
+
+  #contactInfo a:hover {
+  text-decoration: underline;
+  }
+
+#code {
+  display: grid;
+  grid-area: cod;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto 1fr; 
+  background-color: #333;
+  padding: 50px; 
+  text-align: center;
+  align-content: center;
+  justify-items: center;
+}
+
+  #code > h2 {
+    grid-column: 1 / -1; 
+    margin-bottom: 20px; 
+    color: white; 
+  }
+  .icons {
+    width: 50%;
+    transition: transform 0.3s ease;
+  }
+  .icons:hover {
+    transform: scale(1.1);
+}
+
+footer {
+  display: grid;
+  grid-area: ftr;
+  grid-template-columns: 1fr;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #navList {
+    display: none;
+    grid-template-columns: 1fr;
+  }
+
+  #navList.active {
+    display: grid;
+    margin-left: 50px;
+    margin-top: -25px;
+  }
+
+  #mobileMenu {
+    display: block;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #photo {
+    width: 50%; 
+  }
+
+  #triLogo {
+    width: 35%;
+    border-radius: 4px;
+  }
+}
