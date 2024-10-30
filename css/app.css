@@ -232,7 +232,7 @@ body {
 #code {
   display: grid;
   grid-area: cod;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 2fr);
   grid-template-rows: auto 1fr; 
   background-color: #333;
   padding: 50px; 
@@ -249,6 +249,7 @@ body {
   .icons {
     width: 50%;
     transition: transform 0.3s ease;
+    margin: 10px;
   }
   .icons:hover {
     transform: scale(1.1);
