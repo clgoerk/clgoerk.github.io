@@ -18,7 +18,7 @@ h2 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: white;
+  color: #fff;
   background-color: black;
 }
 
@@ -74,9 +74,10 @@ body {
 
 #navList a {
   text-decoration: none;
-  color: white; 
+  color: #fff; 
   font-size: 18px;
   transition: color 0.3s; 
+  font-size: 1.4em;
 }
 
 #navList a:hover {
@@ -98,6 +99,7 @@ body {
   grid-template-columns: 1fr 2fr;
   background-color: #444;
   padding: 50px; 
+  font-size: 1.4em;
 }
   #photo {
     width: 50%;
@@ -132,6 +134,7 @@ body {
   background-color: #555;
   padding: 50px 40px; 
   text-align: center;
+  font-size: 1.4em;
 }
 
   #galleryContainer {
