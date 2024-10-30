@@ -87,6 +87,7 @@ body {
   grid-area: hom;
   grid-template-columns: 1fr;
   background: url('../assets/images/headerBkg.png');
+  background-size: cover;
   padding: 80px 50px; 
   text-align: center;
 }
