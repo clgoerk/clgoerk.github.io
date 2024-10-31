@@ -4,24 +4,20 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
 h1 {
   font-size: 2.4em;
   margin-bottom: 8px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
 }
-
 h2 {
   margin-bottom: 8px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
-
 body {
   font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: #000;
 }
-
 #grid {
   display: grid;
   width: 100%;
@@ -32,12 +28,12 @@ body {
     'hom hom hom hom hom hom hom hom hom hom hom hom'
     'abt abt abt abt abt abt abt abt abt abt abt abt'
     'sea sea sea sea sea sea sea sea sea sea sea sea'
+    'goa goa goa goa goa goa goa goa goa goa goa goa'
     'prt prt prt prt prt prt prt prt prt prt prt prt'
     'cod cod cod cod cod cod cod cod cod cod cod cod'
     'con con con con con con con con con con con con'
     'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
 }
-
 #navbar {
   display: grid;
   grid-area: hdr;
@@ -47,12 +43,10 @@ body {
   background-color: #000;
   padding: 10px 20px;
 }
-
 #mobileMenu {
   display: none; 
   cursor: pointer;
 }
-
 #mobileMenu .bar {
   background: #fff;
   display: block;
@@ -61,7 +55,6 @@ body {
   margin: 5px;
   border-radius: 3px;
 }
-
 #navList {
   list-style: none; 
   display: grid; 
@@ -69,7 +62,6 @@ body {
   gap: 30px;
   justify-content: start;
 }
-
 #navList a {
   text-decoration: none;
   color: #fff; 
@@ -77,11 +69,9 @@ body {
   transition: color 0.3s; 
   font-size: 1.4em;
 }
-
 #navList a:hover {
   color: #66b3ff; 
 }
-
 #home {
   display: grid;
   grid-area: hom;
@@ -91,7 +81,6 @@ body {
   padding: 80px 50px; 
   text-align: center;
 }
-
 #about {
   display: grid;
   grid-area: abt;
@@ -111,7 +100,6 @@ body {
     border-radius: 8px;
     margin-top: 50px;
   }
-
 #seasonal {
   display: grid;
   grid-area: sea;
@@ -125,7 +113,29 @@ body {
     width: 95%;
     margin: 0 auto;
   }
-
+#careerGoals {
+  display: grid;
+  grid-area: goa;
+  grid-template-columns: 1fr 1fr;
+  background: #444;
+  padding: 50px 50px 50px 0;
+  font-size: 1.4em;
+}
+  #careerGoals > h2 {
+    grid-column: 1 / -1; 
+    margin-bottom: 20px; 
+    color: white; 
+    justify-self: center;
+  }
+  .listContainer {
+    padding-left: 50px;
+  }
+  .subList {
+    font-size: 0.8em;
+    margin-left: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 #portfolio {
   display: grid;
   grid-area: prt;
@@ -135,12 +145,10 @@ body {
   text-align: center;
   font-size: 1.4em;
 }
-
   #galleryContainer {
     position: relative; 
     overflow: hidden; 
   }
-
   #gallery {
     display: grid; 
     grid-auto-flow: column; 
@@ -150,7 +158,6 @@ body {
     margin-bottom: 15px;
     margin-top: 10px;
   }
-
   .galleryItem {
     min-width: 300px; 
     height: 500px;
@@ -163,17 +170,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
     cursor: pointer;
-  }
-  
+  } 
   .galleryItem:hover {
     background-color: #555;
     transform: scale(1.05);
   }
-
   #luke {
     width: 75%;
   }
-
   #scrollButtons {
     display: grid;
     position: relative; 
@@ -185,9 +189,8 @@ body {
     justify-content: center; 
     align-items: center; 
     margin-bottom: 5px;
-}
-
-.arrowButton {
+  }
+  .arrowButton {
     background-color: #007BFF; 
     color: #fff;
     border: 2px solid #444; 
@@ -199,13 +202,12 @@ body {
     cursor: pointer;
     font-size: 30px;
     transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
-}
+  }
   .arrowButton:hover {
     background-color: #0056b3; 
     border-color: #333; 
     transform: scale(1.1);
   }
-
 #contact {
   display: grid;
   grid-area: con;
@@ -214,20 +216,16 @@ body {
   padding: 50px; 
   text-align: center;
 }
-
   #contactInfo {
     font-size: 18px;
   }
-
   #contactInfo a {
     color: #66b3ff; 
     text-decoration: none;
   }
-
   #contactInfo a:hover {
   text-decoration: underline;
   }
-
 #code {
   display: grid;
   grid-area: cod;
@@ -238,8 +236,8 @@ body {
   text-align: center;
   align-content: center;
   justify-items: center;
+  font-size: 1.4em;
 }
-
   #code > h2 {
     grid-column: 1 / -1; 
     margin-bottom: 20px; 
@@ -253,7 +251,6 @@ body {
   .icons:hover {
     transform: scale(1.1);
 }
-
 footer {
   display: grid;
   grid-area: ftr;
@@ -269,28 +266,25 @@ footer {
     display: none;
     grid-template-columns: 1fr;
   }
-
   #navList.active {
     display: grid;
     margin-left: 50px;
     margin-top: -25px;
   }
-
   #mobileMenu {
     display: block;
   }
-
   #about {
     grid-template-columns: 1fr;
-    text-align: center;
   }
-
   #photo {
     width: 50%; 
   }
-
   #triLogo {
     width: 35%;
     border-radius: 4px;
+  }
+  #careerGoals {
+    grid-template-columns: 1fr;
   }
 }
