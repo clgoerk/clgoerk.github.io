@@ -124,7 +124,7 @@ body {
   grid-area: goa;
   grid-template-columns: 1fr 1fr;
   background: #444;
-  padding: 50px 50px 50px 0;
+  padding: 50px 0 50px 0;
   font-size: 1.4em;
 }
   #careerGoals > h2 {
@@ -135,6 +135,7 @@ body {
   }
   .listContainer {
     padding-left: 50px;
+    padding-right: 50px;
   }
   .subList {
     font-size: 0.8em;
