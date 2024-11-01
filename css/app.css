@@ -4,6 +4,11 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #000;
+}
 h1 {
   font-size: 2.4em;
   margin-bottom: 8px;
@@ -13,11 +18,7 @@ h2 {
   margin-bottom: 8px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-  background-color: #000;
-}
+
 #grid {
   display: grid;
   width: 100%;
@@ -34,6 +35,7 @@ body {
     'con con con con con con con con con con con con'
     'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
 }
+
 #navbar {
   display: grid;
   grid-area: hdr;
@@ -56,15 +58,16 @@ body {
   border-radius: 3px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-#mobileMenu.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px); 
+  #mobileMenu.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px); 
+  }
+  #mobileMenu.open .bar:nth-child(2) {
+    opacity: 0; 
+  }
+  #mobileMenu.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px); 
 }
-#mobileMenu.open .bar:nth-child(2) {
-  opacity: 0; 
-}
-#mobileMenu.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px); 
-}
+
 #navList {
   list-style: none; 
   display: grid; 
@@ -72,16 +75,17 @@ body {
   gap: 30px;
   justify-content: start;
 }
-#navList a {
-  text-decoration: none;
-  color: #fff; 
-  font-size: 18px;
-  transition: color 0.3s; 
-  font-size: 1.4em;
-}
-#navList a:hover {
-  color: #66b3ff; 
-}
+  #navList a {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 1.4em;
+    transition: color 0.3s; 
+  }
+  #navList a:hover {
+    color: #66b3ff; 
+  }
+
+
 #home {
   display: grid;
   grid-area: hom;
@@ -91,6 +95,7 @@ body {
   padding: 80px 50px; 
   text-align: center;
 }
+
 #about {
   display: grid;
   grid-area: abt;
@@ -116,6 +121,7 @@ body {
     border-radius: 8px;
     margin-top: 50px;
   }
+
 #seasonal {
   display: grid;
   grid-area: sea;
@@ -124,17 +130,29 @@ body {
   background-size: cover;  
   align-items: center;
   padding: 75px; 
+  position: relative;
+  overflow: hidden;
 }
   #happy_halloween {
     width: 95%;
     margin: 0 auto;
   }
+  #ghost {
+    width: 100px;
+    height: auto;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    pointer-events: none; 
+    transition: transform 1.5s ease; 
+  }
+
 #careerGoals {
   display: grid;
   grid-area: goa;
   grid-template-columns: 1fr 1fr;
   background: #444;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
   font-size: 1.4em;
 }
   #careerGoals > h2 {
@@ -149,10 +167,9 @@ body {
   }
   .subList {
     font-size: 0.8em;
-    margin-left: 15px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 8px 0 8px 15px;
   }
+
 #portfolio {
   display: grid;
   grid-area: prt;
@@ -172,8 +189,7 @@ body {
     gap: 20px;   
     width: 100%; 
     overflow: hidden; 
-    margin-bottom: 15px;
-    margin-top: 10px;
+    margin: 10px 0 15px;
   }
   .galleryItem {
     min-width: 300px; 
@@ -228,6 +244,7 @@ body {
     border-color: #333; 
     transform: scale(1.1);
   }
+
 #contact {
   display: grid;
   grid-area: con;
@@ -244,8 +261,9 @@ body {
     text-decoration: none;
   }
   #contactInfo a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
   }
+
 #code {
   display: grid;
   grid-area: cod;
@@ -270,7 +288,8 @@ body {
   }
   .icons:hover {
     transform: scale(1.1);
-}
+  }
+
 footer {
   display: grid;
   grid-area: ftr;
@@ -280,6 +299,7 @@ footer {
   text-align: center;
   color: white;
 }
+
 
 @media (max-width: 768px) {
   #navList {
