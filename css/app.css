@@ -308,8 +308,10 @@ footer {
   }
   #navList.active {
     display: grid;
+    height: 300px;
     margin-left: 50px;
     margin-top: -25px;
+    font-size: 1.4em;
   }
   #mobileMenu {
     display: block;

@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ghost.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
         // Set a delay before the next movement
-        setTimeout(moveGhost, 2000); // Adjust the interval as desired
+        setTimeout(moveGhost, 3000); // Adjust the interval as desired
     }
 
     moveGhost();
