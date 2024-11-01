@@ -185,6 +185,9 @@ body {
   #luke {
     width: 75%;
   }
+  #detailer {
+    width: 48%;
+  }
   #scrollButtons {
     display: grid;
     position: relative; 
