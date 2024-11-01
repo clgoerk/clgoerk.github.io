@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the mobile menu 
     mobileMenu.addEventListener('click', function() {
-        navList.classList.toggle('active');
+        navList.classList.toggle('active'); // Show/hide the navigation list
+        mobileMenu.classList.toggle('open'); // Toggle the 'open' class
     });
 });

@@ -54,6 +54,16 @@ body {
   width: 25px;
   margin: 5px;
   border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#mobileMenu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px); 
+}
+#mobileMenu.open .bar:nth-child(2) {
+  opacity: 0; 
+}
+#mobileMenu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px); 
 }
 #navList {
   list-style: none; 
