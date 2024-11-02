@@ -263,6 +263,11 @@ h2 {
   #contactInfo a:hover {
     text-decoration: underline;
   }
+  .socials {
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+  }
 
 #code {
   display: grid;
@@ -299,7 +304,6 @@ footer {
   text-align: center;
   color: white;
 }
-
 
 @media (max-width: 768px) {
   #navList {
