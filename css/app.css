@@ -10,13 +10,19 @@ body {
   background-color: #000;
 }
 h1 {
+  z-index: 8;
   font-size: 2.4em;
   margin-bottom: 8px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 
+               6px 6px 10px rgba(0, 0, 0, 0.5), 
+               9px 9px 15px rgba(0, 0, 0, 0.3); 
 }
 h2 {
+  z-index: 6;
   margin-bottom: 8px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 
+               6px 6px 10px rgba(0, 0, 0, 0.5), 
+               9px 9px 15px rgba(0, 0, 0, 0.3); 
 }
 
 #grid {
@@ -85,16 +91,33 @@ h2 {
     color: #66b3ff; 
   }
 
-
 #home {
   display: grid;
   grid-area: hom;
   grid-template-columns: 1fr;
-  background: url('../assets/images/headerBkg.png');
-  background-size: cover;
   padding: 80px 50px; 
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: clip-path 3s ease-in-out, opacity 3s ease-in-out;
+    clip-path: circle(150% at 100% 0); 
+    opacity: 1;
+  }
+  .background.hidden {
+    clip-path: circle(0% at 100% 0);
+    opacity: 0;
+  }
 
 #about {
   display: grid;

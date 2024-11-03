@@ -38,16 +38,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const maxX = section.clientWidth - ghost.clientWidth;
         const maxY = section.clientHeight - ghost.clientHeight;
 
-        // Generate random X and Y positions within the section bounds
+        // Generate random X and Y positions within the section
         const randomX = Math.floor(Math.random() * maxX);
         const randomY = Math.floor(Math.random() * maxY);
 
-        // Move the ghost to the new random position within the section's bounds
+        // Move the ghost to the new random position within the section
         ghost.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
         // Set a delay before the next movement
-        setTimeout(moveGhost, 3000); // Adjust the interval as desired
+        setTimeout(moveGhost, 3000); // Adjust the interval 
     }
 
     moveGhost();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const backgrounds = [
+        './assets/images/headerBkg.png',
+        './assets/images/headerBkgBlue.png',
+        './assets/images/headerBkgRed.png'
+    ];
+  
+    let currentBackground = 0;
+    const header = document.querySelector('#home');
+  
+    // Create background divs and set initial styles
+    backgrounds.forEach((src, index) => {
+        const div = document.createElement('div');
+        div.classList.add('background');
+        div.style.backgroundImage = `url(${src})`;
+        if (index !== 0) div.classList.add('hidden'); // Only hide the non-initial backgrounds
+        header.appendChild(div);
+    });
+  
+    // Function to peel to the next background
+    function peelBackground() {
+        const backgroundDivs = document.querySelectorAll('.background');
+        const current = backgroundDivs[currentBackground];
+        current.classList.add('hidden'); // Hide current background
+  
+        // Move to the next background
+        currentBackground = (currentBackground + 1) % backgrounds.length;
+        const next = backgroundDivs[currentBackground];
+        next.classList.remove('hidden'); // Show next background
+    }
+  
+    // Run peel effect every 9 seconds
+    setInterval(peelBackground, 9000);
+});
+  
+
+
