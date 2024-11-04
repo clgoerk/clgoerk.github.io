@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: #000;
+  font-size: 1.6em;
 }
 h1 {
   z-index: 8;
@@ -78,7 +79,7 @@ h2 {
   list-style: none; 
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
-  gap: 30px;
+  gap: 100px;
   justify-content: start;
 }
   #navList a {
@@ -95,7 +96,7 @@ h2 {
   display: grid;
   grid-area: hom;
   grid-template-columns: 1fr;
-  padding: 80px 50px; 
+  padding: 150px 50px; 
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -190,7 +191,7 @@ h2 {
   }
   .subList {
     font-size: 0.8em;
-    margin: 8px 0 8px 15px;
+    margin: 8px 0 45px 15px;
   }
 
 #portfolio {
@@ -213,6 +214,7 @@ h2 {
     width: 100%; 
     overflow: hidden; 
     margin: 10px 0 15px;
+
   }
   .galleryItem {
     min-width: 300px; 
@@ -226,6 +228,7 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
     cursor: pointer;
+    padding: 5px;
   } 
   .galleryItem:hover {
     background-color: #555;
@@ -311,7 +314,7 @@ h2 {
     color: #fff; 
   }
   .icons {
-    width: 50%;
+    width: 30%;
     transition: transform 0.3s ease;
     margin: 10px;
   }
