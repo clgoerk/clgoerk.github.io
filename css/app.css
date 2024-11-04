@@ -333,6 +333,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
   #navList {
     display: none;
     grid-template-columns: 1fr;
@@ -363,4 +366,5 @@ footer {
   .icons {
     width: 50%;
   }
+
 }
