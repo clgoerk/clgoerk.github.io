@@ -55,6 +55,7 @@ h2 {
 #mobileMenu {
   display: none; 
   cursor: pointer;
+  z-index: 10;
 }
 #mobileMenu .bar {
   background: #fff;
@@ -339,13 +340,16 @@ footer {
   #navList {
     display: none;
     grid-template-columns: 1fr;
+    gap: 0;
   }
   #navList.active {
     display: grid;
-    height: 300px;
-    margin-left: 50px;
+    height: 450px;
     margin-top: -25px;
     font-size: 1.4em;
+    text-align: center;
+    padding-top: 50px;
+
   }
   #mobileMenu {
     display: block;
