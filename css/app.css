@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: #000;
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 h1 {
   z-index: 8;
@@ -146,24 +146,25 @@ h2 {
     border-radius: 8px;
     margin-top: 50px;
   }
-
-#seasonal {
-  display: grid;
-  grid-area: sea;
-  grid-template-columns: 1fr;
-  background: url('../assets/images/halloween.jpg');
-  background-size: cover;  
-  align-items: center;
-  padding: 75px; 
-  position: relative;
-  overflow: hidden;
-}
-  #happy_halloween {
-    width: 95%;
-    margin: 0 auto;
+  #seasonal {
+    display: grid;
+    grid-area: sea;
+    grid-template-columns: 1fr;
+    min-width: 100vw; 
+    background: url('../assets/images/happy_easter.png') no-repeat center center;
+    background-size: cover; 
+    align-items: center;
+    padding: 75px;
+    position: relative;
+    overflow: hidden;
   }
-  #ghost {
-    width: 100px;
+#happy_easter {
+  width: 75%;
+  margin: 0 auto; 
+}
+
+  #bunny {
+    width: 150px;
     height: auto;
     position: absolute; 
     top: 0; 
@@ -293,7 +294,7 @@ h2 {
   }
   .socials {
     width: 64px;
-    justify-self: center;
+    justify-content: center;
     margin-top: 20px;
   }
 
@@ -316,11 +317,7 @@ h2 {
   }
   .icons {
     width: 30%;
-    transition: transform 0.3s ease;
     margin: 10px;
-  }
-  .icons:hover {
-    transform: scale(1.1);
   }
 
 footer {

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollRightButton = document.querySelector('#scrollRight');
     const mobileMenu = document.querySelector('#mobileMenu');
     const navList = document.querySelector('#navList');
-    const ghost = document.querySelector('#ghost'); 
+    const ghost = document.querySelector('#bunny'); 
 
     const scrollAmount = 320; // Adjust this value to match galleryItem width + gap
 
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const section = document.querySelector('#seasonal');
 
         // Calculate the maximum positions based on section and ghost dimensions
-        const maxX = section.clientWidth - ghost.clientWidth;
-        const maxY = section.clientHeight - ghost.clientHeight;
+        const maxX = section.clientWidth - bunny.clientWidth;
+        const maxY = section.clientHeight - bunny.clientHeight;
 
         // Generate random X and Y positions within the section
         const randomX = Math.floor(Math.random() * maxX);
