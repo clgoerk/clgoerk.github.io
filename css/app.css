@@ -336,18 +336,17 @@ footer {
   place-items: center; 
   background-color: #333;
 }
-
-#getfitIntro {
-  margin-top: 50px;
-}
-
-.getfitImages {
-  height: 450px;
-  margin: 25px;
-  display: grid; 
-  justify-content: center; 
-  align-items: center;
-}
+  .getfitImageContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+  }
+  #getfitIntro {
+    margin-top: 50px;
+  }
+  .getfitImages {
+    height: 450px;
+    margin: 25px;
+  }
 
 @media (max-width: 768px) {
   body {
@@ -385,6 +384,11 @@ footer {
   }
   .icons {
     width: 50%;
+  }
+
+  .getfitImageContainer {
+    display: grid;
+    grid-template-columns: 1fr; 
   }
 
 }
