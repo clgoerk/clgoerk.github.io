@@ -236,12 +236,10 @@ h2 {
     background-color: #555;
     transform: scale(1.05);
   }
-  #luke {
+  #getfitApp {
     width: 75%;
   }
-  #detailer {
-    width: 48%;
-  }
+
   #scrollButtons {
     display: grid;
     position: relative; 
@@ -329,6 +327,22 @@ footer {
   text-align: center;
   color: #fff;
 }
+
+#getfit {
+  display: grid;
+  padding: 50px 100px;
+  height: 100%;
+  width: 100%;
+  place-items: center; 
+  background-color: #333;
+}
+  #getfitIntro {
+    margin-top: 50px;
+  }
+  .getfitImages {
+    height: 450px;
+    margin: 25px;
+  }
 
 @media (max-width: 768px) {
   body {
