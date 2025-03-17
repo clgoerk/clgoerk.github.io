@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const backgrounds = [
-        './assets/images/headerBkg.png',
-        './assets/images/headerBkgBlue.png',
-        './assets/images/headerBkgRed.png'
+        './assets/images/headerBkg.webp',
+        './assets/images/headerBkgBlue.webp',
+        './assets/images/headerBkgRed.webp'
     ];
   
     let currentBackground = 0;

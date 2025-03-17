@@ -151,7 +151,7 @@ h2 {
     grid-area: sea;
     grid-template-columns: 1fr;
     min-width: 100vw; 
-    background: url('../assets/images/happy_easter.png') no-repeat center center;
+    background: url('../assets/images/happy_easter.webp') no-repeat center center;
     background-size: cover; 
     align-items: center;
     padding: 75px;
@@ -346,6 +346,9 @@ footer {
   .getfitImages {
     height: 450px;
     margin: 25px;
+  }
+  #getfitVideo {
+    height: 450px;
   }
 
 @media (max-width: 768px) {
