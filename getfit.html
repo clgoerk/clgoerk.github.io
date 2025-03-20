@@ -9,10 +9,10 @@
 </head>
 
 <body>
-  <section id="getfit">
+  <section id="project">
     <h1>getFIT</h1>
     <h2>Workout Tracking App</h2>
-    <div id="getfitIntro">
+    <div id="projectIntro">
       <p>
         <strong>getFIT</strong> is a fitness tracking app designed to help users plan, log, and monitor their workouts effortlessly. 
         With an intuitive interface, users can create custom workout routines, track sets, reps, and weights, and visualize progress 
@@ -20,17 +20,21 @@
         <strong>getFIT</strong> makes it easy to stay on top of your fitness journey.
       </p>
     </div>
-    <div class="getfitImageContainer">
-      <img class="getfitImages" src="assets/images/getfit1.webp" alt="getfit Welcome">
-      <img class="getfitImages" src="assets/images/getfit2.webp" alt="getfit Body">
-      <img class="getfitImages" src="assets/images/getfit3.webp" alt="getfit Selection">
-      <img class="getfitImages" src="assets/images/getfit4.webp" alt="getfit Workout">
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/getfit1.webp" alt="getfit Welcome" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit2.webp" alt="getfit Body" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit3.webp" alt="getfit Selection" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit4.webp" alt="getfit Workout" onclick="openLightbox(this)">
     </div>
-    <div class="getfitImageContainer">
-      <img class="getfitImages" src="assets/images/getfit5.png" alt="getfit Exercise">
-      <img class="getfitImages" src="assets/images/getfit6.png" alt="getfit Info">
-      <img class="getfitImages" src="assets/images/getfit7.png" alt="getfit History">
-      <img class="getfitImages" src="assets/images/getfit8.png" alt="getfit Chart">
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/getfit5.png" alt="getfit Exercise" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit6.png" alt="getfit Info" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit7.png" alt="getfit History" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit8.png" alt="getfit Chart" onclick="openLightbox(this)">
+    </div>
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightboxImg">
     </div>
     <br>
     <h2>Video</h2>
@@ -53,14 +57,17 @@
       <li><strong>SwiftUI</strong> for a modern, responsive UI.</li>
       <li><strong>Swift Charts</strong> for progress visualization.</li>
     </ul>
-  </section>
-
-  <footer id="getfitFooter">
+    <br>
     <p>Check out the project on GitHub: 
       <a href="https://github.com/clgoerk/getFITApp" target="_blank">getFIT Repository</a>
     </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
   </footer>
 
+  <script src="scripts/lightbox.js"></script>
 </body>
 
 </html>

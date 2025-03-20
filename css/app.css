@@ -237,7 +237,10 @@ h2 {
     transform: scale(1.05);
   }
   #getfitApp {
-    width: 75%;
+    width: 65%;
+  }
+  #prestige {
+    width: 45%
   }
 
   #scrollButtons {
@@ -328,7 +331,7 @@ footer {
   color: #fff;
 }
 
-#getfit {
+#project {
   display: grid;
   padding: 50px;
   height: 100%;
@@ -336,22 +339,52 @@ footer {
   place-items: center; 
   background-color: #333;
 }
-  .getfitImageContainer {
+  .projectContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
   }
-  #getfitIntro {
+  #projectIntro {
     margin-top: 50px;
   }
-  .getfitImages {
+  .projectImages {
     height: 450px;
     margin: 25px;
+    justify-self: center; 
+    align-self: center;
   }
-  .getfitVideoContainer {
-    height: 450px;
-  }
+ 
   #getfitVideo {
-    height: 450px;
+    width: 100%;
+    height: 450px; 
+  }
+
+    /* Lightbox container */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+  .close {
+    position: absolute;
+    top: 20px;
+   right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .lightbox-content {
+    max-width: 100%;
+    max-height: 90%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
   }
 
 @media (max-width: 768px) {
@@ -392,7 +425,7 @@ footer {
     width: 50%;
   }
 
-  .getfitImageContainer {
+  .projectContainer {
     display: grid;
     grid-template-columns: 1fr; 
   }

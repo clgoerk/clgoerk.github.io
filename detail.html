@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <title>Web Developer Portfolio</title>
+</head>
+
+<body>
+  <section id="project">           
+    <h1>Prestige Auto Detailing</h1>
+    <h2>Auto Deatailing Company Mock-up</h2>
+    <div id="projectIntro">
+      <p>
+        <strong>getFIT</strong> Prestige Auto Detailing is a sleek and professional mock-up of a mobile website designed to showcase a modern auto detailing service. Created in Adobe XD, this concept highlights a clean and intuitive interface that allows users to book services, explore detailing packages, and view past appointments seamlessly. With a focus on user experience and visual appeal, this mock-up demonstrates my ability to design functional, aesthetically pleasing web and mobile layouts. Whether for a real business or a concept, Prestige Auto Detailing reflects my expertise in UI/UX design and prototyping. 
+      </p>
+    </div>
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/Detail1.webp" alt="Prestige Home" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail2.webp" alt="Prestige Navigation" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail3.webp" alt="Prestige Services" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail4.webp" alt="Prestige Gallery" onclick="openLightbox(this)">
+    </div>
+    
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/Detail5.webp" alt="Prestige Reviews" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail6.webp" alt="Prestige Booking" onclick="openLightbox(this)">
+    
+    </div> 
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightboxImg">
+    </div>
+    <br>
+    <h3>Technologies Used:</h3>
+    <ul>
+      <li><strong>Adobe XD</strong> for designing interactive, high-fidelity prototypes with a focus on user experience.</li>
+    </ul>
+    <br>
+    <p>Simulation link: 
+      <a href="https://xd.adobe.com/view/f0bb02e0-f8ae-4eac-9158-b258b446196f-a5e8/" target="_blank">Prestige Auto Detailing</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/lightbox.js"></script>
+</body>
+
+</html>
