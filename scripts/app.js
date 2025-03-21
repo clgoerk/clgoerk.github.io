@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const scrollRightButton = document.querySelector('#scrollRight');
   const mobileMenu = document.querySelector('#mobileMenu');
   const navList = document.querySelector('#navList');
-  const ghost = document.querySelector('#bunny'); 
+  const image = document.querySelector('#bunny'); 
+  const section = document.querySelector('#seasonal');
 
   const scrollAmount = 320; // Adjust this value to match galleryItem width + gap
 
@@ -31,26 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.classList.toggle('open'); 
   });
 
-  // Function to move the ghost randomly within the bounds of the seasonal section
-  function moveGhost() {
-    const section = document.querySelector('#seasonal');
-
-    // Calculate the maximum positions based on section and ghost dimensions
-    const maxX = section.clientWidth - ghost.clientWidth;
-    const maxY = section.clientHeight - ghost.clientHeight;
+  // Function to move the image randomly within the bounds of the seasonal section
+  function moveImage() {
+    // Calculate the maximum positions based on section and image dimensions
+    const maxX = section.clientWidth - image.clientWidth;
+    const maxY = section.clientHeight - image.clientHeight;
 
     // Generate random X and Y positions within the section
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    // Move the ghost to the new random position within the section
-    ghost.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    // Move the image to the new random position within the section
+    bunny.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
     // Set a delay before the next movement
-    setTimeout(moveGhost, 3000); // Adjust the interval 
+    setTimeout(moveImage, 3000); // Adjust the interval 
   }
-
-  moveGhost();
+  moveImage();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
