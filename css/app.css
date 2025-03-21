@@ -181,7 +181,6 @@ h2 {
   width: 75%;
   margin: 0 auto; 
 }
-
   #bunny {
     width: 150px;
     height: auto;
@@ -460,6 +459,7 @@ footer {
   }
 
   #terminal {
+    height: 75px;
     font-size: 25px;
 
   }
