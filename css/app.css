@@ -365,6 +365,7 @@ footer {
     margin: 25px;
     justify-self: center; 
     align-self: center;
+    cursor: pointer;
   }
   #getfitVideo {
     width: 100%;
@@ -387,7 +388,7 @@ footer {
   .close {
     position: absolute;
     top: 20px;
-   right: 30px;
+    right: 30px;
     color: white;
     font-size: 40px;
     font-weight: bold;
