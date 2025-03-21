@@ -39,6 +39,7 @@ h2 {
     'goa goa goa goa goa goa goa goa goa goa goa goa'
     'prt prt prt prt prt prt prt prt prt prt prt prt'
     'cod cod cod cod cod cod cod cod cod cod cod cod'
+    'pen pen pen pen pen pen pen pen pen pen pen pen'
     'con con con con con con con con con con con con'
     'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
 }
@@ -273,6 +274,18 @@ h2 {
     border-color: #333; 
     transform: scale(1.1);
   }
+#codepen {
+  display: grid;
+  grid-area: pen;
+  grid-template-columns: 1fr;
+  background-color: #555;
+  padding: 50px 25px; 
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
 #contact {
   display: grid;
@@ -331,6 +344,7 @@ footer {
   color: #fff;
 }
 
+/* Project pages */
 #project {
   display: grid;
   padding: 50px;
@@ -352,13 +366,12 @@ footer {
     justify-self: center; 
     align-self: center;
   }
- 
   #getfitVideo {
     width: 100%;
     height: 450px; 
   }
 
-    /* Lightbox container */
+/* Lightbox container */
 .lightbox {
   display: none;
   position: fixed;
