@@ -159,7 +159,12 @@ h2 {
     justify-self: center;
     margin-bottom: 20px;
     border-radius: 50%;
-    border: 2px solid
+   
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 
+                6px 6px 10px rgba(0, 0, 0, 0.5), 
+                9px 9px 15px rgba(0, 0, 0, 0.3); 
+    
+    
   }
   #triLogo {
     width: 25%;
