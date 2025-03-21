@@ -155,10 +155,11 @@ h2 {
     justify-self: center;
   }
   #photo {
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 8px;
+    width: 90%;
+    justify-self: center;
     margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid
   }
   #triLogo {
     width: 25%;
