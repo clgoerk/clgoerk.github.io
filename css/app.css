@@ -367,6 +367,7 @@ footer {
   width: 100%;
   place-items: center; 
   background-color: #333;
+  font-size: 1.4em;
 }
   .projectContainer {
     display: grid;
