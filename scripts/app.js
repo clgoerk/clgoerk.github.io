@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Move the image to the new random position within the section
     bunny.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
-    // Set a delay before the next movement
-    setTimeout(moveImage, 3000); // Adjust the interval 
+    setTimeout(moveImage, 3000);
   }
   moveImage();
 });
@@ -82,8 +81,30 @@ document.addEventListener('DOMContentLoaded', function() {
     next.classList.remove('hidden'); // Show next background
   }
 
-  // Run peel effect every 9 seconds
   setInterval(peelBackground, 9000);
+});
+
+// Header introduction
+document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.querySelector("#text");
+  const message = "Welcome to my portfolio...\n> I'm a Web & Mobile Developer";
+  let index = 0;
+
+  function typeEffect() {
+    if (index < message.length) {
+      textElement.innerHTML += message[index] === "\n" ? "<br>" : message[index];
+      index++;
+      setTimeout(typeEffect, 100);
+    } else {
+      setTimeout(() => {
+        textElement.innerHTML = "";
+        index = 0;
+        typeEffect(); 
+      }, 3000);
+    }
+  }
+
+  typeEffect();
 });
 
 
