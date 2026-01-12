@@ -17,30 +17,34 @@ body {
   line-height: 1.5;
 }
 
-/* Headings */
+/* ================= HEADINGS ================= */
+
 h1 {
   position: relative;
   font-size: 2.4em;
-  margin-bottom: 2px;  
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
-               6px 6px 10px rgba(0, 0, 0, 0.5),
-               9px 9px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2px;
+  text-shadow:
+    3px 3px 5px rgba(0, 0, 0, 0.7),
+    6px 6px 10px rgba(0, 0, 0, 0.5),
+    9px 9px 15px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
   font-family: "Courier New", monospace;
   margin-bottom: 8px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
-               6px 6px 10px rgba(0, 0, 0, 0.5),
-               9px 9px 15px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    3px 3px 5px rgba(0, 0, 0, 0.7),
+    6px 6px 10px rgba(0, 0, 0, 0.5),
+    9px 9px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Grid Layout */
+/* ================= GRID ================= */
+
 #grid {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-areas: 
+  grid-template-areas:
     'hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr'
     'hom hom hom hom hom hom hom hom hom hom hom hom'
     'abt abt abt abt abt abt abt abt abt abt abt abt'
@@ -52,7 +56,8 @@ h2 {
     'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
+
 #navbar {
   display: flex;
   align-items: center;
@@ -67,7 +72,6 @@ h2 {
   padding: 10px 48px;
 }
 
-/* Mobile menu */
 #mobileMenu {
   display: none;
   cursor: pointer;
@@ -96,7 +100,6 @@ h2 {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* Desktop nav links */
 #navList {
   list-style: none;
   display: flex;
@@ -121,27 +124,37 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* Home / Hero */
+/* ================= HERO ================= */
+
 #home {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-area: hom;
   width: 100%;
-  height: 400px;
+  height: 420px;
   font-family: "Courier New", monospace;
-  grid-template-columns: 1fr;
-  padding: 80px 25px 40px;
   text-align: center;
+  padding-top: 20px;
   overflow: hidden;
   position: relative;
-  align-content: start;  
-  row-gap: 8px;          
+  gap: 8px;
 }
 
-  #home h1 {
-    margin-bottom: -30px;
-  }
+#home h1 {
+  margin: 0;
+}
 
-/* Animated backgrounds */
+#terminal {
+  height: 90px;
+  font-size: 40px;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .background {
   position: absolute;
   inset: 0;
@@ -159,21 +172,12 @@ h2 {
   opacity: 0;
 }
 
-/* Foreground content */
 #home h1,
 #terminal {
   position: relative;
   z-index: 5;
 }
 
-/* Terminal typing */
-#terminal {
-  height: auto;                   
-  font-size: 40px;
-  white-space: pre-wrap;
-}
-
-/* Cursor */
 #cursor {
   display: inline-block;
   width: 10px;
@@ -186,39 +190,77 @@ h2 {
   to   { opacity: 0; }
 }
 
-/* About */
+/* ================= ABOUT ================= */
+
 #about {
   display: grid;
   grid-area: abt;
-  grid-template-columns: 1fr 2fr;
   background-color: #555;
   padding: 70px 50px 50px;
   gap: 20px;
 }
 
 #about h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 20px;
   justify-self: center;
+  margin-bottom: 20px;
+}
+
+#aboutCard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#aboutImage {
+  display: flex;
+  justify-content: center;
 }
 
 #photo {
   width: 90%;
-  justify-self: center;
-  margin-bottom: 20px;
+  max-width: 360px;
   border-radius: 50%;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
-              6px 6px 10px rgba(0, 0, 0, 0.5),
-              9px 9px 15px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    3px 3px 5px rgba(0, 0, 0, 0.7),
+    6px 6px 10px rgba(0, 0, 0, 0.5),
+    9px 9px 15px rgba(0, 0, 0, 0.3);
+}
+
+#aboutText {
+  background: rgba(0, 0, 0, 0.22);
+  padding: 28px 30px;
+  border-radius: 12px;
+}
+
+.aboutTagline {
+  font-size: 1.3em;
+  margin-bottom: 14px;
+  color: #66b3ff;
+}
+
+#aboutText p {
+  margin-bottom: 14px;
+  line-height: 1.6;
 }
 
 #triLogo {
-  width: 25%;
+  width: 140px;
   border-radius: 8px;
-  margin-top: 50px;
+  margin-top: 18px;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Career Goals */
+#triLogo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* ================= CAREER ================= */
+
 #careerGoals {
   display: grid;
   grid-area: goa;
@@ -242,7 +284,8 @@ h2 {
   margin: 8px 0 45px 15px;
 }
 
-/* Portfolio */
+/* ================= PORTFOLIO ================= */
+
 #portfolio {
   grid-area: prt;
   background-color: #555;
@@ -261,13 +304,13 @@ h2 {
   gap: 20px;
   width: 100%;
   margin: 10px 0 15px;
-  overflow-x: auto;         
-  scroll-behavior: smooth;  
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
-  #gallery::-webkit-scrollbar {
-    display: none;
-  }
+#gallery::-webkit-scrollbar {
+  display: none;
+}
 
 .galleryItem {
   min-width: 300px;
@@ -323,7 +366,8 @@ h2 {
   transform: scale(1.1);
 }
 
-/* Skills */
+/* ================= SKILLS ================= */
+
 #code {
   display: grid;
   grid-area: cod;
@@ -345,7 +389,8 @@ h2 {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* CodePen */
+/* ================= CODEPEN ================= */
+
 #codepen {
   grid-area: pen;
   background-color: #555;
@@ -353,7 +398,8 @@ h2 {
   text-align: center;
 }
 
-/* Contact */
+/* ================= CONTACT ================= */
+
 #contact {
   grid-area: con;
   background-color: #222;
@@ -392,7 +438,8 @@ h2 {
   filter: brightness(1.2);
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
+
 footer {
   grid-area: ftr;
   background-color: #333;
@@ -401,7 +448,8 @@ footer {
   font-size: 0.9em;
 }
 
-/* Responsive */
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
   body {
     font-size: 1em;
@@ -433,16 +481,38 @@ footer {
   }
 
   #about {
+    padding: 40px 20px 60px;
+  }
+
+  #aboutCard {
     grid-template-columns: 1fr;
-    padding: 70px 25px 50px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  #aboutImage {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   #photo {
-    width: 50%;
+    max-width: 260px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  #triLogo {
-    width: 35%;
+  #aboutText {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .aboutTagline {
+    text-align: center;
   }
 
   #careerGoals {
@@ -471,7 +541,6 @@ footer {
     font-size: 25px;
   }
 
-
   #gallery {
     grid-auto-columns: 100%;
     grid-auto-flow: column;
@@ -481,8 +550,7 @@ footer {
 
   .galleryItem {
     height: auto;
-    aspect-ratio: 9 / 16;   
+    aspect-ratio: 9 / 16;
   }
-
 }
 
