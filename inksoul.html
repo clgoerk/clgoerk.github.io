@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <title>Web Developer Portfolio</title>
+</head>
+
+<body>
+  <section id="project">
+    <h2>InkSoul</h2>
+    <h3>Tattoo & Piercing Studio</h3>
+    <div id="projectIntro">
+      <p>
+        <strong>InkSoul</strong> is a professional tattoo and piercing studio dedicated to turning your ideas into lasting art. 
+        With a creative and welcoming atmosphere, clients can explore unique tattoo designs, professional piercings, and personalized consultations 
+        to ensure every piece reflects their individuality. From first-time clients to seasoned collectors, 
+        <strong>InkSoul</strong> makes the experience of body art safe, inspiring, and unforgettable.
+      </p>
+    </div>
+
+    <!-- Gallery containers (replace with InkSoul images later) -->
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/inksoul_home.png" alt="InkSoul Home" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/inksoul_artists.png" alt="InkSoul Artists" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/inksoul_gallery.png" alt="InkSoul Gallery" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/inksoul_services.png" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+    </div>
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/ink5.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/ink6.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/ink7.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Admin_Dashboard.png" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <br>
+<h3>Key Features</h3>
+    <ul>
+      <li><strong>Home Page</strong> – Highlights core services and rotating <em>Flash Sale</em> tattoos with pricing and availability.</li>
+      <li><strong>Gallery</strong> – Showcases completed work with category filters (style, body part, artist, etc.) and detailed captions.</li>
+      <li><strong>Artists</strong> – Dedicated profiles with bio, specialties, and an auto-filtered portfolio of pieces created by each artist.</li>
+      <li><strong>Services</strong> – Clear breakdown of tattoo and piercing services, aftercare, and step-by-step studio process.</li>
+      <li><strong>Booking</strong> – Simple form to request consultations, piercings, or tattoos; routes to the backend for scheduling and confirmations.</li>
+      <li><strong>Admin Dashboard</strong> – Manage appointments, maintain artist portfolios, upload gallery images (with descriptions and artist attribution), and update Flash Sale items.</li>
+      <li><strong>Real-Time Updates</strong> – All admin actions write to the backend and instantly reflect on the public site.</li>
+    </ul>
+
+    <br>
+    <h3>Technologies Used:</h3>
+    <ul>
+      <li><strong>PHP & MySQL</strong> for managing artists, appointments, and gallery content.</li>
+      <li><strong>HTML, CSS, JavaScript</strong> for responsive, modern web design.</li>
+      <li><strong>Custom Admin Dashboard</strong> to handle bookings, artist profiles, and gallery updates.</li>
+    </ul>
+
+    <br>
+    <p>Check out the project on GitHub: 
+      <a href="https://github.com/clgoerk/InkSoul" target="_blank">InkSoul Repository</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/lightbox.js"></script>
+</body>
+</html>
