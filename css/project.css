@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #333;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ===== Page Wrapper ===== */
+#project {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* ===== Headings ===== */
+#project h2 {
+  font-family: "Courier New", monospace;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+#project h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* ===== Intro Text ===== */
+#projectIntro {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* ===== Image Grid ===== */
+.projectContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.projectImages {
+  width: 100%;
+  height: 420px;           
+  object-fit: cover;     
+  object-position: top;    
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #111;
+}
+
+.projectImages:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* ===== Video ===== */
+.getfitVideoContainer {
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+#getfitVideo {
+  width: 100%;
+  max-width: 320px;   
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== Lists ===== */
+#project ul {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+#project li {
+  margin-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  opacity: 0.8;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .projectContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projectContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #getfitVideo {
+    max-height: 300px;
+  }
+
+  #project h2 {
+    font-size: 1.8rem;
+  }
+}

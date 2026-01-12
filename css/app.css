@@ -151,6 +151,7 @@ h2 {
   clip-path: circle(150% at 100% 0);
   opacity: 1;
   z-index: 1;
+  pointer-events: none;
 }
 
 .background.hidden {
@@ -260,7 +261,13 @@ h2 {
   gap: 20px;
   width: 100%;
   margin: 10px 0 15px;
+  overflow-x: auto;         
+  scroll-behavior: smooth;  
 }
+
+  #gallery::-webkit-scrollbar {
+    display: none;
+  }
 
 .galleryItem {
   min-width: 300px;
@@ -457,11 +464,25 @@ footer {
   }
 
   .icons {
-    width: 50%;
+    width: 25%;
   }
 
   #terminal {
     font-size: 25px;
   }
+
+
+  #gallery {
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .galleryItem {
+    height: auto;
+    aspect-ratio: 9 / 16;   
+  }
+
 }
 

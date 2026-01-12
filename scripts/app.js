@@ -3,21 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const gallery = document.querySelector('#gallery');
   const scrollLeftButton = document.querySelector('#scrollLeft');
   const scrollRightButton = document.querySelector('#scrollRight');
-  const scrollAmount = 320; // Match galleryItem width + gap
 
-  function scrollGallery(amount) {
+  function getScrollAmount() {
+    const firstItem = document.querySelector('.galleryItem');
+    if (!firstItem) return 300;
+
+    const style = window.getComputedStyle(gallery);
+    const gap = parseInt(style.columnGap || style.gap || 0);
+
+    return firstItem.offsetWidth + gap;
+  }
+
+  function scrollGallery(direction) {
     if (!gallery) return;
+    const amount = getScrollAmount() * direction;
     gallery.scrollBy({ left: amount, behavior: 'smooth' });
   }
 
   if (gallery && scrollLeftButton && scrollRightButton) {
-    scrollLeftButton.addEventListener('click', () => {
-      scrollGallery(-scrollAmount);
-    });
-
-    scrollRightButton.addEventListener('click', () => {
-      scrollGallery(scrollAmount);
-    });
+    scrollLeftButton.addEventListener('click', () => scrollGallery(-1));
+    scrollRightButton.addEventListener('click', () => scrollGallery(1));
   }
 
   // ===== MOBILE NAV =====
@@ -46,9 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const div = document.createElement('div');
       div.classList.add('background');
       div.style.backgroundImage = `url(${src})`;
-      if (index !== 0) {
-        div.classList.add('hidden'); // Hide non-initial backgrounds
-      }
+      if (index !== 0) div.classList.add('hidden');
       header.appendChild(div);
     });
 
