@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app.css?v=8">
   <title>Web Developer Portfolio</title>
 </head>
 
@@ -19,11 +19,13 @@
       <ul id="navList">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <section id="home">
       <h1>Christopher Goerk</h1>
       <div id="terminal">
@@ -44,11 +46,11 @@
           <h3 class="aboutTagline">Mobile & Web Developer focused on clean, usable products.</h3>
 
           <p>
-            I’m a passionate mobile and web developer with a strong focus on creating user-friendly and innovative solutions. With expertise in both front-end and back-end technologies, I’m equipped with a solid foundation in programming languages, frameworks, and design principles.
+            I’m a mobile and web developer currently completing my Software & Web Development diploma and an internship, where I work on real-world projects involving Shopify, PHP, HTML, CSS, and JavaScript. I focus on building clean, user-friendly interfaces and practical, production-style solutions.
           </p>
 
           <p>
-            I’m always eager to apply my skills to real-world challenges and contribute to exciting projects. Whether it’s developing sleek mobile applications or building dynamic websites, I’m driven by a desire to craft impactful and efficient solutions.
+            I enjoy turning ideas into working applications, whether that’s developing mobile apps, designing interfaces, or building full websites. I’m always looking to improve my skills and take on new technical challenges.
           </p>
 
           <p>
@@ -62,75 +64,48 @@
       </div>
     </section>
 
-    <!-- ===== CAREER GOALS ===== -->
-    <section id="careerGoals">
-      <h2>Career Goals</h2>
-      <div class="listContainer">
-        <ul>
-          <li>Master Core Development Skills
-            <ul class="subList">
-              <li>Build expertise in HTML, CSS, JavaScript, and frameworks like React, Flutter, and Swift.</li>
-            </ul>
-          </li>
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <h2>Experience</h2>
 
-          <li>Create a Strong Portfolio
-            <ul class="subList">
-              <li>Showcase projects that highlight my skills in both web and mobile development.</li>
-            </ul>
-          </li>
+      <div class="experienceCard">
+        <h3>Web Developer Intern — Cruising Solutions / Indie Marine</h3>
+        <p class="experienceDate">2024 – Present</p>
 
-          <li>Contribute to Open Source Projects
-            <ul class="subList">
-              <li>Collaborate on open-source projects to gain experience and connect with the developer community.</li>
-            </ul>
-          </li>
-
-          <li>Build Real-World Projects
-            <ul class="subList">
-              <li>Develop and publish at least one mobile app and one web app to demonstrate practical skills.</li>
-            </ul>
-          </li>
-
-          <li>Focus on UI/UX Design
-            <ul class="subList">
-              <li>Hone design skills to create applications that are both visually appealing and user-friendly.</li>
-            </ul>
-          </li>
+        <ul class="experienceList">
+          <li>Working on production Shopify stores and custom themes</li>
+          <li>Building custom UI components, banners, and dynamic sections</li>
+          <li>Working with Liquid, JavaScript, HTML, CSS, and metafields</li>
+          <li>Improving SEO, structured data, and site performance</li>
+          <li>Maintaining and updating real business websites</li>
         </ul>
       </div>
+    </section>
 
-      <div class="listContainer">
-        <ul>
-          <li>Develop Strong Collaboration Skills
-            <ul class="subList">
-              <li>Work on team projects to improve communication, problem-solving, and project management abilities.</li>
-            </ul>
-          </li>
+    <!-- ===== CAREER FOCUS ===== -->
+    <section id="careerGoals">
+      <h2>Career Focus</h2>
 
-          <li>Stay Updated with Industry Trends
-            <ul class="subList">
-              <li>Continuously learn emerging tech like AI, PWAs, and serverless architectures.</li>
-            </ul>
-          </li>
+      <div class="careerGrid">
+        <div class="careerCard">
+          <h3>What I’m Building</h3>
+          <p>Real-world mobile and web applications with clean UI, good UX, and solid fundamentals.</p>
+        </div>
 
-          <li>Prepare for Professional Certification
-            <ul class="subList">
-              <li>Pursue relevant certifications to validate my skills and strengthen job applications.</li>
-            </ul>
-          </li>
+        <div class="careerCard">
+          <h3>How I Work</h3>
+          <p>I focus on writing clean, readable, and maintainable code that’s easy to understand and extend.</p>
+        </div>
 
-          <li>Grow as a Junior Developer
-            <ul class="subList">
-              <li>Build experience in real-world environments and take on increasingly challenging responsibilities.</li>
-            </ul>
-          </li>
+        <div class="careerCard">
+          <h3>What I’m Improving</h3>
+          <p>Front-end architecture, UI/UX patterns, state management, and more complex app logic.</p>
+        </div>
 
-          <li>Build a Professional Network
-            <ul class="subList">
-              <li>Connect with developers, mentors, and industry professionals for future growth and opportunities.</li>
-            </ul>
-          </li>
-        </ul>
+        <div class="careerCard">
+          <h3>My Goal</h3>
+          <p>Grow into a strong professional developer working on real products in a team environment.</p>
+        </div>
       </div>
     </section>
 
@@ -142,16 +117,18 @@
         <div id="gallery">
           <div class="galleryItem">
             <a href="getfit.html" target="_blank">
-              <img id="getfitApp" src="assets/images/getfit1.webp" alt="GetFit" class="galleryImage">
+              <img src="assets/images/getfit1.webp" alt="GetFit">
             </a>
-            <p>Capstone Project – Mobile Fitness App (SwiftUI)</p>
+            <p><strong>Capstone Project – Mobile Fitness App (SwiftUI)</strong></p>
+            <p>Built with SwiftUI. Handles workout tracking, history, and progress charts.</p>
           </div>
 
           <div class="galleryItem">
             <a href="detail.html" target="_blank">
-              <img id="prestige" src="assets/images/Detail1.webp" alt="Prestige" class="galleryImage">
+              <img src="assets/images/Detail1.webp" alt="Prestige">
             </a>
-            <p>Prestige Auto Detailing – App UI Design (Adobe XD)”</p>
+            <p><strong>Prestige Auto Detailing – App UI Design (Adobe XD)</strong></p>
+            <p>UI/UX design prototype focused on booking flow and service selection.</p>
           </div>
 
           <div class="galleryItem">Project 3</div>
@@ -188,9 +165,7 @@
     <section id="codepen">
       <h2>Codepen</h2>
       <p>Having a little fun on CodePen playing with some hamburger icon animations.</p>
-
       <p class="codepen" data-height="400" data-default-tab="html,result" data-slug-hash="ZEgRRWm" data-pen-title="Hamburger Icon Fun" data-user="Clgoerk"></p>
-
       <script async src="https://public.codepenassets.com/embed/index.js"></script>
     </section>
 
@@ -210,10 +185,10 @@
     </section>
 
     <footer>
-      <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+      <p>&copy; 2026 Christopher Goerk. All rights reserved.</p>
     </footer>
   </div>
 
-  <script src="scripts/app.js"></script>
+  <script src="scripts/app.js?v=8"></script>
 </body>
 </html>
