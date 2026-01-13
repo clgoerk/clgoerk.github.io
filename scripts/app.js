@@ -1,23 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== GALLERY SCROLLING =====
-  const gallery = document.querySelector('#gallery');
-  const scrollLeftButton = document.querySelector('#scrollLeft');
-  const scrollRightButton = document.querySelector('#scrollRight');
 
-  function getScrollAmount() {
-    const firstItem = document.querySelector('.galleryItem');
-    if (!firstItem) return 300;
+  // ===== GALLERY ELEMENTS =====
+  const gallery = document.getElementById('gallery');
+  const dotsContainer = document.getElementById('galleryDots');
+  const scrollLeftButton = document.getElementById('scrollLeft');
+  const scrollRightButton = document.getElementById('scrollRight');
 
-    const style = window.getComputedStyle(gallery);
-    const gap = parseInt(style.columnGap || style.gap || 0);
+  // ===== GALLERY DOTS (MOBILE) =====
+  if (gallery && dotsContainer) {
+    const items = gallery.querySelectorAll('.galleryItem');
 
-    return firstItem.offsetWidth + gap;
+    // Create dots
+    items.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'galleryDot';
+      if (i === 0) dot.classList.add('active');
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.galleryDot');
+
+    function updateDots() {
+      const itemWidth = gallery.clientWidth;
+      const index = Math.round(gallery.scrollLeft / itemWidth);
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    let scrollTimeout;
+    gallery.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateDots, 80);
+    });
   }
 
+  // ===== GALLERY SCROLL BUTTONS (DESKTOP) =====
   function scrollGallery(direction) {
     if (!gallery) return;
-    const amount = getScrollAmount() * direction;
-    gallery.scrollBy({ left: amount, behavior: 'smooth' });
+
+    const item = gallery.querySelector('.galleryItem');
+    if (!item) return;
+
+    const width = item.getBoundingClientRect().width;
+
+    gallery.scrollBy({
+      left: width * direction,
+      behavior: 'smooth'
+    });
   }
 
   if (gallery && scrollLeftButton && scrollRightButton) {
@@ -94,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (textElement) {
     typeEffect();
   }
+
 });
 
 

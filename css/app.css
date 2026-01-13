@@ -191,7 +191,6 @@ h2 {
 }
 
 /* ================= ABOUT ================= */
-
 #about {
   display: grid;
   grid-area: abt;
@@ -260,7 +259,6 @@ h2 {
 }
 
 /* ================= CAREER ================= */
-
 #careerGoals {
   display: grid;
   grid-area: goa;
@@ -285,7 +283,6 @@ h2 {
 }
 
 /* ================= PORTFOLIO ================= */
-
 #portfolio {
   grid-area: prt;
   background-color: #555;
@@ -295,7 +292,6 @@ h2 {
 
 #galleryContainer {
   position: relative;
-  overflow: hidden;
 }
 
 #gallery {
@@ -304,7 +300,9 @@ h2 {
   gap: 20px;
   width: 100%;
   margin: 10px 0 15px;
+  scroll-snap-type: x mandatory;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
 }
 
@@ -314,16 +312,20 @@ h2 {
 
 .galleryItem {
   min-width: 300px;
-  height: 500px;
+  height: 460px;                
   background-color: #333;
   display: grid;
-  place-items: center;
+  grid-template-rows: 1fr auto;  
+  align-items: center;
+  justify-items: center;
   font-size: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, transform 0.3s;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
+  overflow: hidden;            
+  scroll-snap-align: start;
 }
 
 .galleryItem:hover {
@@ -331,9 +333,50 @@ h2 {
   transform: scale(1.05);
 }
 
-#getfitApp { width: 50%; }
-#prestige { width: 32%; }
+.galleryItem a {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;            
+}
 
+.galleryItem img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.galleryItem p {
+  margin: 6px 0 0 0;
+  font-size: 16px;
+}
+
+/* ===== SCROLL DOTS ===== */
+#galleryDots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.galleryDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.galleryDot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+/* ===== SCROLL BUTTONS ===== */
 #scrollButtons {
   display: grid;
   position: relative;
@@ -439,7 +482,6 @@ h2 {
 }
 
 /* ================= FOOTER ================= */
-
 footer {
   grid-area: ftr;
   background-color: #333;
@@ -449,7 +491,6 @@ footer {
 }
 
 /* ================= MOBILE ================= */
-
 @media (max-width: 768px) {
   body {
     font-size: 1em;
@@ -543,14 +584,32 @@ footer {
 
   #gallery {
     grid-auto-columns: 100%;
-    grid-auto-flow: column;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding: 0;
   }
 
   .galleryItem {
-    height: auto;
-    aspect-ratio: 9 / 16;
+    min-width: unset;
+    width: 100%;
+    height: 75vh;
+    gap: 2px;
+  }
+
+  .galleryItem img {
+    padding: 1px;
+  }
+
+    #galleryDots {
+    display: flex;
+  }
+
+    #scrollButtons {
+    display: none;
+  }
+
+    .galleryItem:hover {
+    background-color: #333;
+    transform: none;
   }
 }
 
