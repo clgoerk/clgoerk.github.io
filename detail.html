@@ -5,50 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/project.css">
-  <title>Web Developer Portfolio</title>
+  <title>Prestige Auto Detailing – UI/UX Design Prototype</title>
 </head>
 
 <body>
-  <section id="project">           
-    <h2>Prestige Auto Detailing</h2>
-    <h3>Auto De\tailing Company Mock-up</h3>
-    <div id="projectIntro">
+
+  <section id="project">
+
+    <!-- ===== HEADER ===== -->
+    <header class="projectHeader">
+      <h1>Prestige Auto Detailing</h1>
+      <h2>UI/UX Design Prototype</h2>
+
+      <p class="projectTagline">
+        A high-fidelity UI/UX design concept created in Adobe XD to showcase a modern, clean, and user-friendly booking experience for an auto detailing service.
+      </p>
+
+      <div class="projectMeta">
+        <div><strong>Role:</strong> UI/UX Designer</div>
+        <div><strong>Tool:</strong> Adobe XD</div>
+        <div><strong>Project Type:</strong> Design Concept</div>
+      </div>
+    </header>
+
+    <!-- ===== OVERVIEW ===== -->
+    <div class="infoCard">
+      <h3>The Goal</h3>
       <p>
-        <strong>Prestige Auto Detailing</strong> Prestige Auto Detailing is a sleek and professional mock-up of a mobile website designed to showcase a modern auto detailing service. Created in Adobe XD, this concept highlights a clean and intuitive interface that allows users to book services, explore detailing packages, and view past appointments seamlessly. With a focus on user experience and visual appeal, this mock-up demonstrates my ability to design functional, aesthetically pleasing web and mobile layouts. Whether for a real business or a concept, Prestige Auto Detailing reflects my expertise in UI/UX design and prototyping. 
+        The goal of this project was to design a clean, modern, and easy-to-navigate interface for an auto detailing business that allows customers to browse services, view previous work, and book appointments quickly and intuitively.
       </p>
     </div>
-    <div class="projectContainer">
-      <img class="projectImages" src="assets/images/Detail1.webp" alt="Prestige Home" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/Detail2.webp" alt="Prestige Navigation" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/Detail3.webp" alt="Prestige Services" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/Detail4.webp" alt="Prestige Gallery" onclick="openLightbox(this)">
+
+    <div class="infoCard">
+      <h3>The Approach</h3>
+      <p>
+        I focused on creating a simple, visually appealing layout with clear navigation, strong visual hierarchy, and a frictionless booking flow. The design emphasizes readability, large imagery, and straightforward service selection.
+      </p>
     </div>
-    
+
+    <div class="infoCard">
+      <h3>The Result</h3>
+      <p>
+        The result is a polished, professional UI/UX prototype that demonstrates a complete customer journey — from landing page, to service selection, to booking — suitable for presentation or handoff to a development team.
+      </p>
+    </div>
+
+    <!-- ===== SCREENS ===== -->
+    <h3 class="sectionTitle">Design Screens</h3>
+    <p class="sectionHint">Tap or click any image to view it full size.</p>
+
     <div class="projectContainer">
-      <img class="projectImages" src="assets/images/Detail5.webp" alt="Prestige Reviews" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/Detail6.webp" alt="Prestige Booking" onclick="openLightbox(this)">
-    
-    </div> 
+      <img class="projectImages" src="assets/images/Detail1.webp" alt="Home" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail2.webp" alt="Navigation" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail3.webp" alt="Services" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail4.webp" alt="Gallery" onclick="openLightbox(this)">
+    </div>
+
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/Detail5.webp" alt="Reviews" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Detail6.webp" alt="Booking" onclick="openLightbox(this)">
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
     <div id="lightbox" class="lightbox">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img class="lightbox-content" id="lightboxImg">
     </div>
-    <br>
-    <h3>Technologies Used:</h3>
-    <ul>
-      <li><strong>Adobe XD</strong> for designing interactive, high-fidelity prototypes with a focus on user experience.</li>
-    </ul>
-    <br>
-    <p>Simulation link: 
-      <a href="https://xd.adobe.com/view/f0bb02e0-f8ae-4eac-9158-b258b446196f-a5e8/" target="_blank">Prestige Auto Detailing</a>
-    </p>
+
+    <!-- ===== FEATURES ===== -->
+    <div class="infoCard">
+      <h3>Design Highlights</h3>
+      <ul>
+        <li>Modern, clean visual style</li>
+        <li>Clear service categories and navigation</li>
+        <li>Simple booking flow concept</li>
+        <li>Strong use of imagery and spacing</li>
+        <li>Mobile-first layout thinking</li>
+      </ul>
+    </div>
+
+    <!-- ===== TOOLS ===== -->
+    <div class="infoCard">
+      <h3>Tools Used</h3>
+      <ul>
+        <li>Adobe XD</li>
+      </ul>
+    </div>
+
+    <!-- ===== LINK ===== -->
+    <div class="infoCard">
+      <p>
+        View the interactive prototype:
+        <a class="accentLink" href="https://xd.adobe.com/view/f0bb02e0-f8ae-4eac-9158-b258b446196f-a5e8/" target="_blank">
+          Prestige Auto Detailing (Adobe XD)
+        </a>
+      </p>
+    </div>
+
+    <!-- ===== BACK ===== -->
+    <div class="infoCard">
+      <p>
+        <a class="accentLink" href="index.html#portfolio">← Back to Portfolio</a>
+      </p>
+    </div>
+
   </section>
 
   <footer>
-    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+    <p>&copy; 2026 Christopher Goerk. All rights reserved.</p>
   </footer>
 
   <script src="scripts/lightbox.js"></script>
 </body>
-
 </html>

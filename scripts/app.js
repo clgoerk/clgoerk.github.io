@@ -1,62 +1,124 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ===== GALLERY ELEMENTS =====
+  // ================= GALLERY + DOTS + DRAG + CLICK =================
   const gallery = document.getElementById('gallery');
   const dotsContainer = document.getElementById('galleryDots');
-  const scrollLeftButton = document.getElementById('scrollLeft');
-  const scrollRightButton = document.getElementById('scrollRight');
 
-  // ===== GALLERY DOTS (MOBILE) =====
   if (gallery && dotsContainer) {
-    const items = gallery.querySelectorAll('.galleryItem');
+    const items = Array.from(gallery.querySelectorAll('.galleryItem'));
 
-    // Create dots
-    items.forEach((_, i) => {
+    // ---------- Build dots ----------
+    dotsContainer.innerHTML = '';
+    items.forEach((item, i) => {
       const dot = document.createElement('div');
       dot.className = 'galleryDot';
       if (i === 0) dot.classList.add('active');
+
+      dot.addEventListener('click', () => {
+        gallery.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
+      });
+
       dotsContainer.appendChild(dot);
     });
 
-    const dots = dotsContainer.querySelectorAll('.galleryDot');
+    const dots = Array.from(dotsContainer.querySelectorAll('.galleryDot'));
+
+    function getActiveIndex() {
+      const center = gallery.scrollLeft + gallery.clientWidth / 2;
+      let bestIndex = 0;
+      let bestDist = Infinity;
+
+      items.forEach((item, i) => {
+        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+        const dist = Math.abs(center - itemCenter);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIndex = i;
+        }
+      });
+
+      return bestIndex;
+    }
 
     function updateDots() {
-      const itemWidth = gallery.clientWidth;
-      const index = Math.round(gallery.scrollLeft / itemWidth);
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
+      const idx = getActiveIndex();
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
     }
 
     let scrollTimeout;
     gallery.addEventListener('scroll', () => {
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(updateDots, 80);
+      scrollTimeout = setTimeout(updateDots, 60);
+    });
+
+    window.addEventListener('resize', updateDots);
+    updateDots();
+
+    // ================= DESKTOP: DRAG TO SCROLL =================
+    let isDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let moved = false;
+    let downCard = null;
+    const DRAG_THRESHOLD = 6;
+
+    gallery.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      if (e.button !== 0) return;
+
+      isDown = true;
+      moved = false;
+
+      startX = e.clientX;
+      startScrollLeft = gallery.scrollLeft;
+      downCard = e.target.closest('.galleryItem');
+
+      gallery.classList.add('dragging');
+      gallery.setPointerCapture(e.pointerId);
+    });
+
+    gallery.addEventListener('pointermove', (e) => {
+      if (!isDown) return;
+
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > DRAG_THRESHOLD) moved = true;
+
+      gallery.scrollLeft = startScrollLeft - dx;
+      e.preventDefault();
+    });
+
+    function endDrag() {
+      if (!isDown) return;
+
+      isDown = false;
+      gallery.classList.remove('dragging');
+
+      if (!moved && downCard) {
+        const link = downCard.dataset.link;
+        if (link) {
+          window.location.href = link;
+        }
+      }
+
+      downCard = null;
+    }
+
+    gallery.addEventListener('pointerup', endDrag);
+    gallery.addEventListener('pointercancel', endDrag);
+    gallery.addEventListener('lostpointercapture', endDrag);
+
+    // ================= MOBILE: TAP TO OPEN =================
+    items.forEach(card => {
+      card.addEventListener('click', () => {
+        const link = card.dataset.link;
+        if (link) {
+          window.location.href = link;
+        }
+      });
     });
   }
 
-  // ===== GALLERY SCROLL BUTTONS (DESKTOP) =====
-  function scrollGallery(direction) {
-    if (!gallery) return;
-
-    const item = gallery.querySelector('.galleryItem');
-    if (!item) return;
-
-    const width = item.getBoundingClientRect().width;
-
-    gallery.scrollBy({
-      left: width * direction,
-      behavior: 'smooth'
-    });
-  }
-
-  if (gallery && scrollLeftButton && scrollRightButton) {
-    scrollLeftButton.addEventListener('click', () => scrollGallery(-1));
-    scrollRightButton.addEventListener('click', () => scrollGallery(1));
-  }
-
-  // ===== MOBILE NAV =====
+  // ================= MOBILE NAV =================
   const mobileMenu = document.querySelector('#mobileMenu');
   const navList = document.querySelector('#navList');
 
@@ -67,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== HEADER BACKGROUND PEEL EFFECT =====
+  // ================= HEADER BACKGROUND PEEL EFFECT =================
   const backgrounds = [
     './assets/images/headerBkg.webp',
     './assets/images/headerBkgBlue.webp',
@@ -90,18 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const backgroundDivs = header.querySelectorAll('.background');
       if (!backgroundDivs.length) return;
 
-      const current = backgroundDivs[currentBackground];
-      current.classList.add('hidden');
-
+      backgroundDivs[currentBackground].classList.add('hidden');
       currentBackground = (currentBackground + 1) % backgrounds.length;
-      const next = backgroundDivs[currentBackground];
-      next.classList.remove('hidden');
+      backgroundDivs[currentBackground].classList.remove('hidden');
     }
 
     setInterval(peelBackground, 9000);
   }
 
-  // ===== TYPEWRITER INTRO =====
+  // ================= TYPEWRITER INTRO =================
   const textElement = document.querySelector('#text');
   const message = "Hi, I'm Chris.\n> Web & Mobile Developer";
   let index = 0;
@@ -122,9 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (textElement) {
-    typeEffect();
-  }
+  if (textElement) typeEffect();
 
 });
 

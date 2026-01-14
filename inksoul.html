@@ -4,71 +4,138 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css">
-  <title>Web Developer Portfolio</title>
+  <link rel="stylesheet" href="css/project.css">
+  <title>InkSoul – Tattoo & Piercing Studio Management System</title>
 </head>
 
 <body>
+
   <section id="project">
-    <h2>InkSoul</h2>
-    <h3>Tattoo & Piercing Studio</h3>
-    <div id="projectIntro">
+
+    <!-- ===== HEADER ===== -->
+    <header class="projectHeader">
+      <h1>InkSoul</h1>
+      <h2>Tattoo & Piercing Studio Management System</h2>
+
+      <p class="projectTagline">
+        A capstone full-stack web application built as part of my Mobile & Web Development diploma, designed to manage a tattoo and piercing studio with bookings, artist profiles, galleries, and an admin dashboard.
+      </p>
+
+      <div class="projectMeta">
+        <div><strong>Role:</strong> Sole Developer (Design & Development)</div>
+        <div><strong>Stack:</strong> PHP, MySQL, JavaScript</div>
+        <div><strong>Status:</strong> Completed</div>
+      </div>
+    </header>
+
+    <!-- ===== OVERVIEW ===== -->
+    <div class="infoCard">
+      <h3>The Problem</h3>
       <p>
-        <strong>InkSoul</strong> is a professional tattoo and piercing studio dedicated to turning your ideas into lasting art. 
-        With a creative and welcoming atmosphere, clients can explore unique tattoo designs, professional piercings, and personalized consultations 
-        to ensure every piece reflects their individuality. From first-time clients to seasoned collectors, 
-        <strong>InkSoul</strong> makes the experience of body art safe, inspiring, and unforgettable.
+        Many small studios rely on social media messages and manual processes to manage bookings, artists, and galleries, which leads to disorganization, missed messages, and inefficient workflows.
       </p>
     </div>
 
-    <!-- Gallery containers (replace with InkSoul images later) -->
+    <div class="infoCard">
+      <h3>The Goal</h3>
+      <p>
+        Build a complete studio management system that allows clients to browse work and request bookings, while giving administrators full control over artists, galleries, and appointments from a secure dashboard.
+      </p>
+    </div>
+
+    <div class="infoCard">
+      <h3>The Solution</h3>
+      <p>
+        I built InkSoul as a full-stack PHP & MySQL application with a public-facing website and a secure admin dashboard. The system uses a relational database to manage artists, galleries, and appointments, and includes role-based admin tools for content management, image uploads, and booking workflows. All changes made in the admin panel are reflected instantly on the live site.
+      </p>
+    </div>
+
+    <!-- ===== APP SCREENS ===== -->
+    <h3 class="sectionTitle">Application Screens</h3>
+    <p class="sectionHint">Tap or click any image to view it full size.</p>
+
     <div class="projectContainer">
       <img class="projectImages" src="assets/images/inksoul_home.png" alt="InkSoul Home" onclick="openLightbox(this)">
       <img class="projectImages" src="assets/images/inksoul_artists.png" alt="InkSoul Artists" onclick="openLightbox(this)">
       <img class="projectImages" src="assets/images/inksoul_gallery.png" alt="InkSoul Gallery" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/inksoul_services.png" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
-    </div>
-    <div class="projectContainer">
-      <img class="projectImages" src="assets/images/ink5.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/ink6.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/ink7.webp" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/Admin_Dashboard.png" alt="InkSoul Tattoo Example" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/inksoul_services.png" alt="InkSoul Services" onclick="openLightbox(this)">
     </div>
 
-    <!-- Lightbox -->
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/Admin_Dashboard.png" alt="Admin Dashboard" onclick="openLightbox(this)">
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
     <div id="lightbox" class="lightbox">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img class="lightbox-content" id="lightboxImg">
     </div>
 
-    <br>
-<h3>Key Features</h3>
-    <ul>
-      <li><strong>Home Page</strong> – Highlights core services and rotating <em>Flash Sale</em> tattoos with pricing and availability.</li>
-      <li><strong>Gallery</strong> – Showcases completed work with category filters (style, body part, artist, etc.) and detailed captions.</li>
-      <li><strong>Artists</strong> – Dedicated profiles with bio, specialties, and an auto-filtered portfolio of pieces created by each artist.</li>
-      <li><strong>Services</strong> – Clear breakdown of tattoo and piercing services, aftercare, and step-by-step studio process.</li>
-      <li><strong>Booking</strong> – Simple form to request consultations, piercings, or tattoos; routes to the backend for scheduling and confirmations.</li>
-      <li><strong>Admin Dashboard</strong> – Manage appointments, maintain artist portfolios, upload gallery images (with descriptions and artist attribution), and update Flash Sale items.</li>
-      <li><strong>Real-Time Updates</strong> – All admin actions write to the backend and instantly reflect on the public site.</li>
-    </ul>
+    <!-- ===== FEATURES ===== -->
+    <div class="infoCard">
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Public Website</strong> – Showcases artists, services, and studio portfolio</li>
+        <li><strong>Gallery System</strong> – Categorized tattoo images with artist attribution</li>
+        <li><strong>Artist Profiles</strong> – Individual pages with bios and work</li>
+        <li><strong>Booking Requests</strong> – Clients can request appointments through forms</li>
+        <li><strong>Admin Dashboard</strong> – Manage artists, gallery images, and appointments</li>
+        <li><strong>Real-Time Updates</strong> – All admin changes instantly reflect on the site</li>
+      </ul>
+    </div>
 
-    <br>
-    <h3>Technologies Used:</h3>
-    <ul>
-      <li><strong>PHP & MySQL</strong> for managing artists, appointments, and gallery content.</li>
-      <li><strong>HTML, CSS, JavaScript</strong> for responsive, modern web design.</li>
-      <li><strong>Custom Admin Dashboard</strong> to handle bookings, artist profiles, and gallery updates.</li>
-    </ul>
+    <!-- ===== TECH ===== -->
+    <div class="infoCard">
+      <h3>Technical Highlights</h3>
+      <ul>
+        <li>Full CRUD system for artists, gallery items, and appointments</li>
+        <li>Admin authentication system</li>
+        <li>Dynamic filtering and category management</li>
+        <li>Image upload and storage handling</li>
+        <li>Separation of public site and admin dashboard</li>
+      </ul>
+    </div>
 
-    <br>
-    <p>Check out the project on GitHub: 
-      <a href="https://github.com/clgoerk/InkSoul" target="_blank">InkSoul Repository</a>
-    </p>
+    <div class="infoCard">
+      <h3>Technologies Used</h3>
+      <ul>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>HTML, CSS, JavaScript</li>
+      </ul>
+    </div>
+
+    <!-- ===== LEARNING ===== -->
+    <div class="infoCard">
+      <h3>What I Learned</h3>
+      <ul>
+        <li>Designing and building a real full-stack web application</li>
+        <li>Database schema design and relational data management</li>
+        <li>Authentication and admin control systems</li>
+        <li>Building reusable CRUD interfaces</li>
+        <li>Managing file uploads and content systems</li>
+      </ul>
+    </div>
+
+    <!-- ===== LINKS ===== -->
+    <div class="infoCard">
+      <p>
+        View the project on GitHub:
+        <a class="accentLink" href="https://github.com/clgoerk/InkSoul" target="_blank">InkSoul Repository</a>
+      </p>
+    </div>
+
+    <!-- ===== BACK ===== -->
+    <div class="infoCard">
+      <p>
+        <a class="accentLink" href="index.html#portfolio">← Back to Portfolio</a>
+      </p>
+    </div>
+
   </section>
 
   <footer>
-    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+    <p>&copy; 2026 Christopher Goerk. All rights reserved.</p>
   </footer>
 
   <script src="scripts/lightbox.js"></script>
