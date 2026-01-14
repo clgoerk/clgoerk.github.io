@@ -5,69 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/project.css">
-  <title>Web Developer Portfolio</title>
+  <title>getFIT – Workout Tracking App</title>
 </head>
 
 <body>
+
   <section id="project">
-    <h2>getFIT</h2>
-    <h3>Workout Tracking App</h3>
-    <div id="projectIntro">
+
+    <!-- ===== HEADER ===== -->
+    <header class="projectHeader">
+      <h1>getFIT</h1>
+      <h2>Workout Tracking App</h2>
+
+      <p class="projectTagline">
+        A mobile fitness tracking app designed to help users plan, log, and analyze their workouts with a clean and intuitive interface.
+      </p>
+
+      <div class="projectMeta">
+        <div><strong>Role:</strong> Sole Developer (Design & Development)</div>
+        <div><strong>Platform:</strong> iOS (SwiftUI)</div>
+        <div><strong>Status:</strong> Completed</div>
+      </div>
+    </header>
+
+    <!-- ===== OVERVIEW ===== -->
+    <div class="infoCard">
+      <h3>The Problem</h3>
       <p>
-        <strong>getFIT</strong> is a fitness tracking app designed to help users plan, log, and monitor their workouts effortlessly. 
-        With an intuitive interface, users can create custom workout routines, track sets, reps, and weights, and visualize progress 
-        through detailed logs and interactive charts. Whether you're a beginner or a fitness enthusiast, 
-        <strong>getFIT</strong> makes it easy to stay on top of your fitness journey.
+        Many workout tracking solutions are either too complex, cluttered, or make logging workouts slow and frustrating. I wanted to build a focused, clean app that makes workout logging fast while still providing meaningful progress tracking.
       </p>
     </div>
-    <div class="projectContainer">
-      <img class="projectImages" src="assets/images/getfit1.webp" alt="getfit Welcome" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit2.webp" alt="getfit Body" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit3.webp" alt="getfit Selection" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit4.webp" alt="getfit Workout" onclick="openLightbox(this)">
+
+    <div class="infoCard">
+      <h3>The Goal</h3>
+      <p>
+        Build a clean, mobile-first workout tracking app that allows users to quickly create routines, log workouts, and view progress over time with clear visual feedback.
+      </p>
     </div>
-    <div class="projectContainer">
-      <img class="projectImages" src="assets/images/getfit5.png" alt="getfit Exercise" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit6.png" alt="getfit Info" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit7.png" alt="getfit History" onclick="openLightbox(this)">
-      <img class="projectImages" src="assets/images/getfit8.png" alt="getfit Chart" onclick="openLightbox(this)">
+
+    <div class="infoCard">
+      <h3>The Solution</h3>
+      <p>
+        I designed getFIT using SwiftUI with a simple, structured flow: select exercises, log sets and reps, and review progress through history and charts. The app focuses on speed, clarity, and minimizing friction during workouts.
+      </p>
     </div>
+
+    <!-- ===== APP SCREENS ===== -->
+    <h3 class="sectionTitle">App Screens</h3>
+    <p class="sectionHint">Tap or click any image to view it full size.</p>
+
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/getfit1.webp" alt="Welcome" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit2.webp" alt="Planner" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit3.webp" alt="Exercise List" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit4.webp" alt="Workout" onclick="openLightbox(this)">
+    </div>
+
+    <div class="projectContainer">
+      <img class="projectImages" src="assets/images/getfit5.png" alt="Exercise Detail" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit6.png" alt="Info" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit7.png" alt="History" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/getfit8.png" alt="Charts" onclick="openLightbox(this)">
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
     <div id="lightbox" class="lightbox">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img class="lightbox-content" id="lightboxImg">
     </div>
-    <br>
-    <h2>Video</h2>
+
+    <!-- ===== VIDEO ===== -->
+    <h3 class="sectionTitle">Video Demo</h3>
+
     <div class="getfitVideoContainer">
       <video id="getfitVideo" controls>
         <source src="assets/videos/getfit1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <br>
-    <h3>Key Features:</h3>
-    <ul>
-      <li><strong>Custom Workout Creation</strong> – Select exercises and build personalized routines.</li>
-      <li><strong>Workout Logging</strong> – Track sets, reps, and weight, for every session.</li>
-      <li><strong>Progress Tracking</strong> – View workout history and analyze trends through charts.</li>
-    </ul>
-    <br>
-    <h3>Technologies Used:</h3>
-    <ul>
-      <li><strong>SwiftUI</strong> for a modern, responsive UI.</li>
-      <li><strong>Swift Charts</strong> for progress visualization.</li>
-    </ul>
-    <br>
-    <p>Check out the project on GitHub: 
-      <a href="https://github.com/clgoerk/getFITApp" target="_blank">getFIT Repository</a>
-    </p>
+
+    <!-- ===== FEATURES ===== -->
+    <div class="infoCard">
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Custom Workout Creation</strong> – Build personalized routines</li>
+        <li><strong>Workout Logging</strong> – Track sets, reps, and weight</li>
+        <li><strong>Progress Tracking</strong> – View workout history and analyze trends</li>
+      </ul>
+    </div>
+
+    <!-- ===== TECH ===== -->
+    <div class="infoCard">
+      <h3>Technical Highlights</h3>
+      <ul>
+        <li>Built entirely with SwiftUI</li>
+        <li>Multi-screen navigation architecture</li>
+        <li>Reusable UI components</li>
+        <li>State-driven navigation and data flow</li>
+        <li>Chart-based data visualization</li>
+      </ul>
+    </div>
+
+    <div class="infoCard">
+      <h3>Technologies Used</h3>
+      <ul>
+        <li>SwiftUI</li>
+        <li>Swift Charts</li>
+      </ul>
+    </div>
+
+    <!-- ===== LEARNING ===== -->
+    <div class="infoCard">
+      <h3>What I Learned</h3>
+      <ul>
+        <li>Structuring a real multi-screen SwiftUI application</li>
+        <li>Managing state and navigation across views</li>
+        <li>Designing reusable UI components</li>
+        <li>Working with historical data and chart visualizations</li>
+        <li>Building a complete app from concept to finished product</li>
+      </ul>
+    </div>
+
+    <!-- ===== LINKS ===== -->
+    <div class="infoCard">
+      <p>
+        View the project on GitHub:
+        <a class="accentLink" href="https://github.com/clgoerk/getFITApp">getFIT Repository</a>
+      </p>
+    </div>
+
   </section>
 
   <footer>
-    <p>&copy; 2024 Christopher Goerk. All rights reserved.</p>
+    <p>&copy; 2026 Christopher Goerk. All rights reserved.</p>
   </footer>
 
   <script src="scripts/lightbox.js"></script>
 </body>
-
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css?v=8">
+  <link rel="stylesheet" href="css/app.css?v=9">
   <title>Web Developer Portfolio</title>
 </head>
 
@@ -46,7 +46,7 @@
           <h3 class="aboutTagline">Mobile & Web Developer focused on clean, usable products.</h3>
 
           <p>
-            I’m a mobile and web developer currently completing my Software & Web Development diploma and an internship, where I work on real-world projects involving Shopify, PHP, HTML, CSS, and JavaScript. I focus on building clean, user-friendly interfaces and practical, production-style solutions.
+            I’m a mobile and web developer who has completed my Software & Web Development diploma and professional internship, where I worked on real-world production projects involving Shopify, Liquid, HTML, CSS, and JavaScript. I focus on building clean, user-friendly interfaces and practical, production-quality solutions.
           </p>
 
           <p>
@@ -69,16 +69,26 @@
       <h2>Experience</h2>
 
       <div class="experienceCard">
-        <h3>Web Developer Intern — Cruising Solutions / Indie Marine</h3>
-        <p class="experienceDate">2024 – Present</p>
+        <h3>
+          Web Developer Intern — 
+          <a class="accentLink" href="https://www.cruisingsolutions.com" target="_blank">Cruising Solutions</a> 
+          <span class="companySep">/</span>
+          <a class="accentLink" href="https://www.indiemarine.com" target="_blank">Indie Marine</a>
+        </h3>
+        <p class="experienceDate">2025</p>
 
         <ul class="experienceList">
-          <li>Working on production Shopify stores and custom themes</li>
-          <li>Building custom UI components, banners, and dynamic sections</li>
-          <li>Working with Liquid, JavaScript, HTML, CSS, and metafields</li>
-          <li>Improving SEO, structured data, and site performance</li>
-          <li>Maintaining and updating real business websites</li>
+          <li>Worked on production Shopify stores and custom themes</li>
+          <li>Built custom UI components, banners, and dynamic sections</li>
+          <li>Worked with Liquid, JavaScript, HTML, CSS, and metafields</li>
+          <li>Improved SEO, structured data, and site performance</li>
+          <li>Maintained and updated real business websites</li>
+          <li>Contributed to live production features and performance improvements</li>
         </ul>
+
+        <p class="experienceNote">
+          <em>Work performed as part of a development team on existing production systems.</em>
+        </p>
       </div>
     </section>
 
@@ -112,6 +122,7 @@
     <!-- ===== PORTFOLIO ===== -->
     <section id="portfolio">
       <h2>My Work</h2>
+      <p class="sectionHint">Tap or click a project to view details.</p>
 
       <div id="galleryContainer">
         <div id="gallery">
@@ -161,11 +172,25 @@
       <img class="icons" src="assets/images/kotlin.png" alt="Kotlin">
     </section>
 
-    <!-- ===== CODEPEN ===== -->
+    <!-- ===== UI EXPERIMENTS ===== -->
     <section id="codepen">
-      <h2>Codepen</h2>
-      <p>Having a little fun on CodePen playing with some hamburger icon animations.</p>
-      <p class="codepen" data-height="400" data-default-tab="html,result" data-slug-hash="ZEgRRWm" data-pen-title="Hamburger Icon Fun" data-user="Clgoerk"></p>
+      <h2>UI Experiments & Prototypes</h2>
+      <p>
+        A small collection of UI and interaction experiments exploring animations, micro-interactions, and component behavior.
+        These prototypes are used to test ideas before integrating them into real projects.
+      </p>
+
+      <p>
+        🔗 <a class="accentLink" href="https://codepen.io/Clgoerk" target="_blank"> View more experiments on my CodePen profile</a>
+      </p>
+
+      <p class="codepen"
+         data-height="400"
+         data-default-tab="html,result"
+         data-slug-hash="ZEgRRWm"
+         data-pen-title="Hamburger Icon Fun"
+         data-user="Clgoerk"></p>
+
       <script async src="https://public.codepenassets.com/embed/index.js"></script>
     </section>
 
@@ -175,7 +200,10 @@
       <p>If you have any questions or would like to get in touch, feel free to contact me using the information below:</p>
 
       <div id="contactInfo">
-        <p><strong>Email:</strong> <a href="mailto:clgoerk@rogers.com">clgoerk@rogers.com</a></p>
+        <p>
+          <strong>Email:</strong> 
+          <a class="accentLink" href="mailto:clgoerk@rogers.com">clgoerk@rogers.com</a>
+        </p>
       </div>
 
       <div class="socials-container">
@@ -189,6 +217,6 @@
     </footer>
   </div>
 
-  <script src="scripts/app.js?v=8"></script>
+  <script src="scripts/app.js?v=9"></script>
 </body>
 </html>

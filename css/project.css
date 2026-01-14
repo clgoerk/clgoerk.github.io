@@ -4,40 +4,123 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #3ea6ff;
+}
+
 html, body {
   background: #333;
   color: #fff;
   font-family: 'Roboto', sans-serif;
 }
 
-/* ===== Page Wrapper ===== */
+/* ===== Layout ===== */
 #project {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px 80px;
 }
 
-/* ===== Headings ===== */
-#project h2 {
+/* ===== Header ===== */
+.projectHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projectHeader h1 {
+  font-size: 2.6rem;
   font-family: "Courier New", monospace;
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2.2rem;
 }
 
-#project h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  opacity: 0.9;
+.projectHeader h2 {
+  opacity: 0.8;
+  margin-top: 5px;
 }
 
-/* ===== Intro Text ===== */
-#projectIntro {
-  max-width: 900px;
-  margin: 0 auto 40px;
+.projectTagline {
+  max-width: 800px;
+  margin: 20px auto;
   line-height: 1.6;
-  font-size: 1.05rem;
+}
+
+.projectMeta {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  opacity: 0.85;
+}
+
+/* ===== Accent Links (SAME AS HOMEPAGE) ===== */
+.accentLink {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.accentLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3db6ff, #00e5ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.accentLink:hover {
+  color: #7fd9ff;
+}
+
+.accentLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Kill browser purple visited links */
+.accentLink:visited {
+  color: var(--accent);
+}
+
+/* ===== Cards ===== */
+.infoCard {
+  background: #3b3b3b;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 0 auto 25px;
+  max-width: 900px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.infoCard h3 {
+  margin-bottom: 10px;
+}
+
+.infoCard ul {
+  padding-left: 20px;
+}
+
+.infoCard li {
+  margin-bottom: 8px;
+}
+
+/* ===== Section Titles ===== */
+.sectionTitle {
   text-align: center;
+  margin: 50px 0 20px;
+  font-family: "Courier New", monospace;
+}
+
+.sectionHint {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 /* ===== Image Grid ===== */
@@ -50,9 +133,9 @@ html, body {
 
 .projectImages {
   width: 100%;
-  height: 420px;           
-  object-fit: cover;     
-  object-position: top;    
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 14px;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -95,30 +178,14 @@ html, body {
 
 /* ===== Video ===== */
 .getfitVideoContainer {
-  max-width: 900px;
+  max-width: 320px;
   margin: 0 auto 40px;
 }
 
 #getfitVideo {
   width: 100%;
-  max-width: 320px;   
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* ===== Lists ===== */
-#project ul {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-}
-
-#project li {
-  margin-bottom: 10px;
 }
 
 /* ===== Footer ===== */
@@ -129,7 +196,7 @@ footer {
   opacity: 0.8;
 }
 
-/* ===== Mobile ===== */
+/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .projectContainer {
     grid-template-columns: repeat(2, 1fr);
@@ -141,11 +208,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  #getfitVideo {
-    max-height: 300px;
-  }
-
-  #project h2 {
-    font-size: 1.8rem;
+  .projectHeader h1 {
+    font-size: 2.1rem;
   }
 }
