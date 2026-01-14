@@ -161,27 +161,47 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ================= TYPEWRITER INTRO =================
-  const textElement = document.querySelector('#text');
-  const message = "Hi, I'm Chris.\n> Web & Mobile Developer";
-  let index = 0;
+  const line1 = document.getElementById("line1");
+  const line2 = document.getElementById("line2");
+
+  const lines = [
+    "Hi, I'm Chris.",
+    "> Web & Mobile Developer"
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
 
   function typeEffect() {
-    if (!textElement) return;
+    if (!line1 || !line2) return;
 
-    if (index < message.length) {
-      textElement.innerHTML += message[index] === '\n' ? '<br>' : message[index];
-      index++;
-      setTimeout(typeEffect, 100);
+    const target = lineIndex === 0 ? line1 : line2;
+    const text = lines[lineIndex];
+
+    if (charIndex < text.length) {
+      target.textContent += text[charIndex];
+      charIndex++;
+      setTimeout(typeEffect, 80);
     } else {
-      setTimeout(() => {
-        textElement.innerHTML = '';
-        index = 0;
-        typeEffect();
-      }, 3000);
+      if (lineIndex === 0) {
+        lineIndex = 1;
+        charIndex = 0;
+        setTimeout(typeEffect, 300);
+      } else {
+        setTimeout(resetTypewriter, 2500);
+      }
     }
   }
 
-  if (textElement) typeEffect();
+  function resetTypewriter() {
+    line1.textContent = "";
+    line2.textContent = "";
+    lineIndex = 0;
+    charIndex = 0;
+    typeEffect();
+  }
+
+  typeEffect();
 
 });
 
