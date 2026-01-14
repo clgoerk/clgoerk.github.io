@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================= TYPEWRITER INTRO =================
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
+  const cursor = document.getElementById("cursor");
 
   const lines = [
     "Hi, I'm Chris.",
@@ -172,14 +173,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let lineIndex = 0;
   let charIndex = 0;
 
+  function moveCursorTo(element) {
+    element.appendChild(cursor);
+  }
+
   function typeEffect() {
-    if (!line1 || !line2) return;
+    if (!line1 || !line2 || !cursor) return;
 
     const target = lineIndex === 0 ? line1 : line2;
     const text = lines[lineIndex];
 
+    moveCursorTo(target);
+
     if (charIndex < text.length) {
-      target.textContent += text[charIndex];
+      target.insertBefore(document.createTextNode(text[charIndex]), cursor);
       charIndex++;
       setTimeout(typeEffect, 80);
     } else {
@@ -196,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetTypewriter() {
     line1.textContent = "";
     line2.textContent = "";
+    line2.appendChild(cursor);
     lineIndex = 0;
     charIndex = 0;
     typeEffect();
