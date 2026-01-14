@@ -67,7 +67,7 @@ h2 {
   left: 0;
   z-index: 1000;
   background-color: #000;
-  padding: 10px 48px;
+  padding: 10px 16px;
 }
 
 #mobileMenu {
@@ -458,32 +458,60 @@ h2 {
 
 /* ================= SKILLS ================= */
 #code {
-  display: grid;
   grid-area: cod;
-  grid-template-columns: repeat(6, 1fr);
   background-color: #333;
-  padding: 50px;
+  padding: 60px 40px;
   text-align: center;
-  justify-items: center;
 }
 
-#code > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 20px;
+#code h2 {
+  margin-bottom: 30px;
+}
+
+.skillsWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.skillsCard {
+  background: rgba(0,0,0,0.25);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.skillsCard h3 {
+  color: #66b3ff;
+  margin-bottom: 6px;
+}
+
+.skillsNote {
+  opacity: 0.8;
+  font-size: 0.9em;
+  margin-bottom: 18px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 18px;
 }
 
 .icons {
-  width: 20%;
-  margin: 10px;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin: 12px;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* ================= CODEPEN ================= */
-#codepen {
-  grid-area: pen;
-  background-color: #555;
-  padding: 50px;
-  text-align: center;
+.icons:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 /* ================= CONTACT ================= */
@@ -576,14 +604,14 @@ footer {
 
   #navList {
     display: none;
-    position: fixed;
-    top: 50px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     background-color: #000;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding-bottom: 20px;
     gap: 20px;
   }
 
@@ -640,7 +668,8 @@ footer {
   }
 
   .icons {
-    width: 25%;
+    width: 40%;
+    margin: 12px;
   }
 
   #terminal {
@@ -673,6 +702,14 @@ footer {
 
   .careerGrid {
     grid-template-columns: 1fr;
+  }
+
+  .skillsWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
