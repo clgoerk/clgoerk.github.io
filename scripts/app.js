@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.getElementById("cursor");
 
   const lines = [
-    "Hi, I'm Chris.",
+    "> Hi, I'm Chris.",
     "> Web & Mobile Developer"
   ];
 
