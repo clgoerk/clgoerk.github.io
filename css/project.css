@@ -152,27 +152,30 @@ html, body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   z-index: 9999;
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
+  overflow: auto;
+  padding: 40px;
 }
 
 .lightbox.show {
-  display: flex;
+  display: block;
+}
+
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 12px;
 }
 
 .close {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 40px;
+  font-size: 48px;
+  color: white;
   cursor: pointer;
 }
 

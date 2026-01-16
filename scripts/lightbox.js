@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   const lightbox = document.querySelector("#lightbox");
   const lightboxImg = document.querySelector("#lightboxImg");
@@ -6,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function openLightbox(imgElement) {
     const fullSrc = imgElement.dataset.full || imgElement.src;
 
-    lightbox.style.display = "flex";
+    // Show overlay
+    lightbox.classList.add("show");
 
-    // Show loading spinner while loading
+    // Fade out while loading
     lightboxImg.style.opacity = "0";
 
     const tempImg = new Image();
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function closeLightbox() {
-    lightbox.style.display = "none";
+    lightbox.classList.remove("show");
     lightboxImg.src = "";
   }
 
-  // Attach globally so inline onclick still works
+  // Expose globally for inline onclick
   window.openLightbox = openLightbox;
   window.closeLightbox = closeLightbox;
 });
