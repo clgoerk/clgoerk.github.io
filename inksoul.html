@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>InkSoul Tattoo Studio Management System (PHP & MySQL) – Chris Goerk Portfolio</title>
+
+  <meta name="description" content="InkSoul is a full-stack tattoo studio management system built by Chris Goerk using PHP, MySQL, and JavaScript. A capstone project featuring bookings, artist profiles, galleries, and an admin dashboard.">
+
+  <meta name="author" content="Chris Goerk">
+
+  <link rel="canonical" href="https://clgoerk.com/inksoul.html">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="InkSoul Tattoo Studio Management System – Full-Stack Capstone Project">
+  <meta property="og:description" content="A full-stack PHP & MySQL tattoo studio management system with bookings, galleries, artist profiles, and an admin dashboard. Built by Chris Goerk as a capstone project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clgoerk.com/inksoul.html">
+  <meta property="og:image" content="https://clgoerk.com/assets/images/inksoul_home.webp">
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/project.css">
-  <title>InkSoul – Tattoo & Piercing Studio Management System</title>
 </head>
 
 <body>
@@ -22,6 +37,7 @@
       </p>
 
       <div class="projectMeta">
+        <div><strong>Project Type:</strong> Capstone Project (Full-Stack Web Application)</div>
         <div><strong>Role:</strong> Sole Developer (Design & Development)</div>
         <div><strong>Stack:</strong> PHP, MySQL, JavaScript</div>
         <div><strong>Status:</strong> Completed</div>
@@ -50,6 +66,26 @@
       </p>
     </div>
 
+        <!-- ===== SYSTEM ARCHITECTURE ===== -->
+    <div class="infoCard">
+      <h3>System Architecture Overview</h3>
+
+      <p>
+        InkSoul is built as a full-stack web system composed of a public-facing website, a secure admin dashboard, and a shared MySQL database. The admin dashboard is used to manage all artists, gallery images, and appointments, while the public site dynamically displays the same data in real time.
+      </p>
+
+      <ul>
+        <li><strong>Public Website:</strong> Displays artists, galleries, services, and studio information to visitors</li>
+        <li><strong>Admin Dashboard:</strong> Secure backend used to manage content, images, artists, and appointments</li>
+        <li><strong>MySQL Database:</strong> Central data store for all studio content and booking information</li>
+        <li><strong>Image Storage:</strong> Handles uploaded gallery and artist images used across the site</li>
+      </ul>
+
+      <p>
+        All content updates made through the admin dashboard are instantly reflected on the live public website through the shared database, creating a centralized and consistent content management workflow.
+      </p>
+    </div>
+
     <!-- ===== APP SCREENS ===== -->
     <h3 class="sectionTitle">Application Screens</h3>
     <p class="sectionHint">Tap or click any image to view it full size.</p>
@@ -62,7 +98,7 @@
     </div>
 
     <div class="projectContainer">
-      <img class="projectImages" src="assets/images/Admin_Dashboard.png" alt="Admin Dashboard" onclick="openLightbox(this)">
+      <img class="projectImages" src="assets/images/Admin_Dashboard.webp" alt="Admin Dashboard" onclick="openLightbox(this)">
     </div>
 
     <!-- ===== LIGHTBOX ===== -->
