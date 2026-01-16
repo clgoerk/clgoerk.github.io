@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clgoerk.com/sitemap.xml
