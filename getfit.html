@@ -6,7 +6,7 @@
 
   <title>getFIT iOS Workout Tracker App (SwiftUI) – Chris Goerk Portfolio</title>
 
-  <meta name="description" content="getFIT is a SwiftUI iOS workout tracking app built by Chris Goerk. A capstone project featuring workout planning, logging, history tracking, and progress charts.">
+  <meta name="description" content="getFIT is a SwiftUI iOS workout tracking app built by Chris Goerk that fetches 1400+ exercises from a remote API. Features workout planning, logging, history tracking, and progress charts.">
 
   <meta name="author" content="Chris Goerk">
 
@@ -32,7 +32,7 @@
       <h2>Capstone Mobile App Project by Chris Goerk</h2>   
 
       <p class="projectTagline">
-        getFIT is an iOS workout tracking app built using SwiftUI as my capstone project for the Mobile & Web Development program. The app allows users to plan workouts, log exercises, track progress, and visualize performance over time using charts in a clean, intuitive interface.
+        getFIT is an iOS workout tracking app built using SwiftUI as my capstone project for the Mobile & Web Development program. The app dynamically fetches 1400+ exercises from a remote API, allowing users to plan workouts, log exercises, track progress, and visualize performance over time using charts in a clean, intuitive interface.
       </p>
 
       <div class="projectMeta">
@@ -62,6 +62,16 @@
       <h3>The Solution</h3>
       <p>
         I designed getFIT using SwiftUI with a simple, structured flow: select exercises, log sets and reps, and review progress through history and charts. The app focuses on speed, clarity, and minimizing friction during workouts.
+      </p>
+    </div>
+
+    <div class="infoCard">
+      <h3>Data & API Integration</h3>
+      <p>
+        Instead of using hardcoded or local data, getFIT consumes a remote exercise API containing over 1400 exercises. The app fetches, parses, and displays this data dynamically, allowing users to browse a large exercise library, view details, and build workouts from real-world data.
+      </p>
+      <p>
+        This required implementing asynchronous network requests, JSON decoding, error handling, and state-driven UI updates in SwiftUI.
       </p>
     </div>
 
@@ -121,6 +131,8 @@
       <h3>Technical Highlights</h3>
       <ul>
         <li>Built entirely with SwiftUI</li>
+        <li>Remote REST API integration (1400+ exercises)</li>
+        <li>Asynchronous networking and JSON decoding</li>
         <li>Multi-screen navigation architecture</li>
         <li>Reusable UI components</li>
         <li>State-driven navigation and data flow</li>
