@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://clgoerk.com%{REQUEST_URI} [L,R=301]
+
+# Force non-WWW
+RewriteCond %{HTTP_HOST} ^www\.clgoerk\.com [NC]
+RewriteRule ^ https://clgoerk.com%{REQUEST_URI} [L,R=301]
