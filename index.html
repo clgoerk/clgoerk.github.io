@@ -168,36 +168,40 @@
     <!-- ===== PORTFOLIO ===== -->
     <section id="portfolio">
       <h2>My Work</h2>
-      <p class="sectionHint">Scroll or drag to browse • Click a project to view details</p>
+      <p class="sectionHint">Browse one project at a time • Click a project to view details</p>
 
-      <div id="galleryContainer">
-          <div id="gallery">
+      <div id="portfolioSlider">
 
-            <div class="galleryItem" data-link="getfit.html">
-              <img src="assets/images/getfit1.webp" alt="GetFit">
-              <p><strong>Capstone Project – Mobile Fitness App (SwiftUI)</strong></p>
-              <p>Built with SwiftUI. Handles workout tracking, history, and progress charts.</p>
-            </div>
+        <button class="sliderBtn" id="prevProject" aria-label="Previous project">&#10094;</button>
 
-            <div class="galleryItem" data-link="prestige-auto.html">
-              <img src="assets/images/Detail1.webp" alt="Prestige">
-              <p><strong>Prestige Auto Detailing – App UI Design (Adobe XD)</strong></p>
-              <p>UI/UX design prototype focused on booking flow and service selection.</p>
-            </div>
+        <div id="sliderViewport">
+          <div id="sliderTrack">
 
-            <div class="galleryItem" data-link="inksoul.html">
+            <div class="projectSlide" data-link="inksoul.html">
               <img src="assets/images/inksoul_home.webp" alt="InkSoul">
-              <p><strong>Capstone Project – InkSoul Tattoo Studio Management System</strong></p>
+              <h3>Capstone Project – InkSoul Tattoo Studio Management System</h3>
               <p>Full-stack PHP/MySQL web application with admin dashboard, booking system, and gallery management.</p>
             </div>
 
-            <div class="galleryItem">Project 4</div>
-            <div class="galleryItem">Project 5</div>
+            <div class="projectSlide" data-link="getfit.html">
+              <img src="assets/images/getfit1.webp" alt="GetFit">
+              <h3>Capstone Project – Mobile Fitness App (SwiftUI)</h3>
+              <p>Built with SwiftUI. Handles workout tracking, history, and progress charts.</p>
+            </div>
+
+            <div class="projectSlide" data-link="prestige-auto.html">
+              <img src="assets/images/Detail1.webp" alt="Prestige Auto Detailing">
+              <h3>Prestige Auto Detailing – App UI Design (Adobe XD)</h3>
+              <p>UI/UX design prototype focused on booking flow and service selection.</p>
+            </div>
 
           </div>
+        </div>
 
-        <div id="galleryDots"></div>
+        <button class="sliderBtn" id="nextProject" aria-label="Next project">&#10095;</button>
       </div>
+
+      <div id="sliderDots"></div>
     </section>
 
     <!-- ===== SKILLS ===== -->

@@ -1,120 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ================= GALLERY + DOTS + DRAG + CLICK =================
-  const gallery = document.getElementById('gallery');
-  const dotsContainer = document.getElementById('galleryDots');
+  // ================= SINGLE PROJECT SLIDER =================
+  const sliderTrack = document.getElementById('sliderTrack');
+  const slides = Array.from(document.querySelectorAll('.projectSlide'));
+  const prevProject = document.getElementById('prevProject');
+  const nextProject = document.getElementById('nextProject');
+  const sliderDots = document.getElementById('sliderDots');
 
-  if (gallery && dotsContainer) {
-    const items = Array.from(gallery.querySelectorAll('.galleryItem'));
+  if (sliderTrack && slides.length && prevProject && nextProject && sliderDots) {
+    let currentSlide = 0;
+
+    function renderSlider() {
+      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      const dots = Array.from(sliderDots.querySelectorAll('.sliderDot'));
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
 
     // ---------- Build dots ----------
-    dotsContainer.innerHTML = '';
-    items.forEach((item, i) => {
+    sliderDots.innerHTML = '';
+    slides.forEach((_, index) => {
       const dot = document.createElement('div');
-      dot.className = 'galleryDot';
-      if (i === 0) dot.classList.add('active');
+      dot.className = 'sliderDot';
+      if (index === 0) dot.classList.add('active');
 
       dot.addEventListener('click', () => {
-        gallery.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
+        currentSlide = index;
+        renderSlider();
       });
 
-      dotsContainer.appendChild(dot);
+      sliderDots.appendChild(dot);
     });
 
-    const dots = Array.from(dotsContainer.querySelectorAll('.galleryDot'));
+    // ---------- Previous / Next ----------
+    prevProject.addEventListener('click', () => {
+      currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+      renderSlider();
+    });
 
-    function getActiveIndex() {
-      const center = gallery.scrollLeft + gallery.clientWidth / 2;
-      let bestIndex = 0;
-      let bestDist = Infinity;
+    nextProject.addEventListener('click', () => {
+      currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+      renderSlider();
+    });
 
-      items.forEach((item, i) => {
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-        const dist = Math.abs(center - itemCenter);
-        if (dist < bestDist) {
-          bestDist = dist;
-          bestIndex = i;
+    // ---------- Click slide to open details ----------
+    slides.forEach((slide) => {
+      slide.addEventListener('click', () => {
+        const link = slide.dataset.link;
+        if (link) {
+          window.location.href = link;
         }
       });
-
-      return bestIndex;
-    }
-
-    function updateDots() {
-      const idx = getActiveIndex();
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
-    }
-
-    let scrollTimeout;
-    gallery.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(updateDots, 60);
     });
 
-    window.addEventListener('resize', updateDots);
-    updateDots();
-
-    // ================= DESKTOP: DRAG TO SCROLL =================
-    let isDown = false;
+    // ---------- Optional swipe support for mobile ----------
     let startX = 0;
-    let startScrollLeft = 0;
-    let moved = false;
-    let downCard = null;
-    const DRAG_THRESHOLD = 6;
+    let endX = 0;
 
-    gallery.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      if (e.button !== 0) return;
-
-      isDown = true;
-      moved = false;
-
-      startX = e.clientX;
-      startScrollLeft = gallery.scrollLeft;
-      downCard = e.target.closest('.galleryItem');
-
-      gallery.classList.add('dragging');
-      gallery.setPointerCapture(e.pointerId);
+    sliderTrack.addEventListener('touchstart', (e) => {
+      startX = e.changedTouches[0].clientX;
     });
 
-    gallery.addEventListener('pointermove', (e) => {
-      if (!isDown) return;
+    sliderTrack.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
 
-      const dx = e.clientX - startX;
-      if (Math.abs(dx) > DRAG_THRESHOLD) moved = true;
-
-      gallery.scrollLeft = startScrollLeft - dx;
-      e.preventDefault();
-    });
-
-    function endDrag() {
-      if (!isDown) return;
-
-      isDown = false;
-      gallery.classList.remove('dragging');
-
-      if (!moved && downCard) {
-        const link = downCard.dataset.link;
-        if (link) {
-          window.location.href = link;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+        } else {
+          currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
         }
+        renderSlider();
       }
-
-      downCard = null;
-    }
-
-    gallery.addEventListener('pointerup', endDrag);
-    gallery.addEventListener('pointercancel', endDrag);
-    gallery.addEventListener('lostpointercapture', endDrag);
-
-    // ================= MOBILE: TAP TO OPEN =================
-    items.forEach(card => {
-      card.addEventListener('click', () => {
-        const link = card.dataset.link;
-        if (link) {
-          window.location.href = link;
-        }
-      });
     });
   }
 
